@@ -440,3 +440,83 @@ nav {
 .card-volei:active {
   transform: scale(0.95) rotateZ(1.7deg);
 }
+
+.soccer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.card-soccer {
+  box-sizing: border-box;
+  width: 100%;
+  height: 354px;
+  background: #ffffff;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-weight: bolder;
+  color: black;
+  margin: 40px;
+}
+
+.card-soccer:hover {
+  border: 1px solid black;
+  background-color: #fee18b;
+  transform: scale(1.05);
+}
+
+.card-soccer:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+
+.tennis {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.card-tennis {
+  box-sizing: border-box;
+  width: 100%;
+  height: 354px;
+  background: #ffffff;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-weight: bolder;
+  color: black;
+  margin: 40px;
+}
+
+.card-tennis:hover {
+  border: 1px solid black;
+  background-color: #fa6e6e;
+  transform: scale(1.05);
+}
+
+.card-tennis:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
