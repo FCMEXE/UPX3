@@ -1,0 +1,291 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.btn-div {
+  padding-top: 20px;
+
+  text-align: center;
+}
+
+.btn {
+  font-size: 17px;
+  background: transparent;
+  border: none;
+  padding: 1em 1.5em;
+  color: #ffedd3;
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.5s ease;
+  cursor: pointer;
+  font-weight: 40px;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #f3f4f5;
+  transition: 0.5s ease;
+}
+
+.btn:hover {
+  color: #1e1e2b;
+  transition-delay: 0.5s;
+}
+
+.btn:hover::before {
+  width: 100%;
+  text-decoration: none;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #f3f4f5;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+.btn:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
+}
+
+body {
+  background-color: #03a9f4;
+}
+
+.left-side {
+  width: 100%;
+  height: 100%;
+}
+
+.text {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 30px;
+  padding-bottom: 40px;
+  padding-top: 50px;
+}
+
+h1 {
+  font-size: 60px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  justify-content: center;
+
+  color: #f3f4f5;
+}
+
+.btns {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 180px;
+}
+
+.waves {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+.main {
+  margin: 70px;
+  padding: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+}
+
+.up {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.down {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.card1 {
+  width: 110px;
+  height: 110px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 90px 5px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
+}
+
+.instagram {
+  margin-top: 1.5em;
+  margin-left: 1.2em;
+  fill: #cc39a4;
+}
+
+.card2 {
+  width: 110px;
+  height: 110px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 90px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
+}
+
+.facebook {
+  margin-top: 1.5em;
+  margin-left: -0.9em;
+  fill: #03a9f4;
+}
+
+.card3 {
+  width: 110px;
+  height: 110px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 5px 90px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
+}
+
+.whatsapp {
+  margin-top: -0.6em;
+  margin-left: 1.2em;
+  fill: #00ff00;
+}
+
+.card4 {
+  width: 110px;
+  height: 110px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 90px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
+}
+
+.gmail {
+  margin-top: -0.9em;
+  margin-left: -1.2em;
+  fill: #f14336;
+}
+
+.card1:hover {
+  cursor: pointer;
+  scale: 1;
+  background-color: #cc39a4;
+}
+
+.card1:hover .instagram {
+  fill: white;
+}
+
+.card2:hover {
+  cursor: pointer;
+  scale: 1;
+  background-color: #1877f2;
+}
+
+.card2:hover .facebook {
+  fill: white;
+}
+
+.card3:hover {
+  cursor: pointer;
+  scale: 1;
+  background-color: #00ff00;
+}
+
+.card3:hover .whatsapp {
+  fill: white;
+}
+
+.card4:hover {
+  cursor: pointer;
+  scale: 1;
+  background-color: #ff0004;
+}
+
+.card4:hover .gmail {
+  fill: white;
+}
+
+.instagram,
+.facebook,
+.whatsapp,
+.gmail {
+  font-size: 2em; /* Ajuste o tamanho conforme necessário */
+}
+
+.card1:hover .instagram {
+  transform: scale(1.5); /* Ajuste o fator de escala conforme necessário */
+}
+
+.card2:hover .facebook {
+  transform: scale(1.5); /* Ajuste o fator de escala conforme necessário */
+}
+
+.card3:hover .whatsapp {
+  transform: scale(1.5); /* Ajuste o fator de escala conforme necessário */
+}
+
+.card4:hover .gmail {
+  transform: scale(1.5); /* Ajuste o fator de escala conforme necessário */
+}
+
+/* <div class="btn">
+          <button class="navBtn" onclick="redirectTolandingPage()">Home</button>
+        </div>
+        <div class="text">
+          <h1 class="top">
+            Aqui você encontra o melhor meio para esclarecer suas duvidas
+          </h1>
+        </div>
+        <div class="btns">
+          <button class="navBtn" onclick="redirectToWhatsApp()">
+            Whatsapp
+          </button>
+          <button class="navBtn" onclick="redirectToEmail()">E-mail</button>
+          <button class="navBtn" onclick="redirectToTelefone()">
+            Telefone
+          </button>
+        </div> */

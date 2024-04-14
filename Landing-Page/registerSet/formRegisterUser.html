@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="styleRegister.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Registro de Usuário</title>
+  </head>
+
+  <body>
+    <main>
+      <section class="mainPage">
+        <section class="register">
+          <div class="container-right">
+            <form class="form">
+
+              <h1>CADASTRAR-SE COMO USUÁRIO</h1>
+              <p></p>
+
+              <div class="name-register">
+                <label for="name">Nome</label>
+                  <div class="inputForm">
+                    <input
+                      type="text"
+                      class="input"
+                      placeholder="Digite seu nome completo"
+                      required
+                    />
+                  </div>
+              </div>
+
+              <div class="tel-register">
+                <label for="tel">Celular </label>
+                  <div class="inputForm">
+                    <input 
+                    type="tel" 
+                    class="input" 
+                    placeholder="(XX) XXXXX-XXXX"
+                    maxlength="11"
+                    required
+                    />
+                  </div>
+              </div>
+
+              <div class="cpf-register">
+                <label for="cpf">CPF</label>
+                  <div class="inputForm">
+                    <input 
+                    type="text" 
+                    class="input" 
+                    placeholder="XXX.XXX.XXX-XX"
+                    maxlength="11"
+                    required
+                    />
+                  </div>
+              </div>
+
+              <div class="date-register">
+                <label for="date">Data de Nascimento </label>
+                  <div class="inputForm">
+                    <input 
+                    type="date" 
+                    class="input" 
+                    placeholder="Selecione ou digite sua data de nascimento"
+                    required
+                    />
+                  </div>
+              </div>
+
+              <div class="email-register">
+                <label for="email">Email </label>
+                  <div class="inputForm">
+                    <input 
+                    type="text" 
+                    class="input" 
+                    placeholder="Exemplo: jose32@gmail.com"
+                    required
+                    />
+                  </div>
+              </div>
+
+              <div class="end-register">
+                <label for="end">Endereço </label>
+                  <div class="inputForm">
+                    <input 
+                    type="text" 
+                    class="input" 
+                    placeholder="Rua X, XXX, Bairro, Cidade - UF"
+                    required
+                    />
+                  </div>
+              </div>
+
+              <div class="senha-register">
+                <label for="senha">Senha </label>
+                  <div class="inputForm">
+                    <input 
+                    type="password" 
+                    class="input" 
+                    placeholder="Sua Senha" 
+                    required
+                    />
+                  </div>
+              </div>
+
+              <div class="formBTN">
+                <button class="button-submit">Registrar</button>
+              </div>
+
+            </form>
+          </div>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
