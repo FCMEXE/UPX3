@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -37,37 +38,44 @@
           </li>
 
           <ul class="menu-links">
-            <li class="nav-link">
-              <a href="#">
+
+
+            <li class="nav-link" data-file="Home/home.html">
+              <a href="#" >
                 <i class="bx bx-home-alt icon"></i>
+                <span class="text nav-text">Home</span>
+              </a>
+            </li>
+
+            <li class="nav-link"  data-file="Quadras/quadras.html">
+              <a href="" >
+                <i class='bx bx-basketball icon'></i>
                 <span class="text nav-text">Quadras</span>
               </a>
             </li>
 
-            <li class="nav-link">
+            <li class="nav-link"  data-file="Lobbies/lobbie.html">
               <a href="#">
                 <i class='bx bx-search-alt-2 icon'></i>
                 <span class="text nav-text">Lobbies </span>
               </a>
             </li>
-
-            
-
-            <li class="nav-link">
+           
+            <li class="nav-link"  data-file="Agenda/agenda.html">
               <a href="#">
                 <i class="bx bx-pie-chart-alt icon"></i>
                 <span class="text nav-text"> Agenda</span>
               </a>
             </li>
 
-            <li class="nav-link">
+            <li class="nav-link"  data-file="Amigos/amigos.html">
               <a href="#">
                 <i class="bx bx-heart icon"></i>
                 <span class="text nav-text">Amigos</span>
               </a>
             </li>
 
-            <li class="nav-link">
+            <li class="nav-link"  data-file="Wallet/wallet.html">
               <a href="#">
                <i class='bx bx-wallet icon' ></i>
                 <span class="text nav-text">Carteira</span>
@@ -77,8 +85,8 @@
         </div>
 
 
-         <div class="bottom-content">
-          <li class="">
+         <div class="bottom-content" >
+          <li class="nav-link"  data-file="Proprietario/proprietario.html">
             <a href="#">
               <i class='bx bx-store-alt icon'></i>
               <span class="text nav-text">Proprietário</span>
@@ -86,7 +94,7 @@
           </li>
 
         <div class="bottom-content">
-          <li class="">
+          <li class="nav-link"  data-file="LogOut/logout.html">
             <a href="#">
               <i class="bx bx-log-out icon"></i>
               <span class="text nav-text">Sair</span>
@@ -108,8 +116,17 @@
       </div>
     </nav>
 
+
+
+
+
+
+  
+
+
+
     <section class="home">
-      <!-- <div class="text">quero uma mamadinha dps bjs!</div> -->
+     
       <div class="card text">
         <img src="/assets/image-1x1.png" alt="Imagem" class="img" />
       </div>
@@ -118,36 +135,38 @@
         <h1>Quadras Populares</h1>
       </div>
       <div class="cardQuadras-content">
-        <div class="card" onclick="">
+
+        <div class="card" onclick="extendLobby()">
           <div class="card-details">
             <p class="text-title">Quadra Romarinho</p>
             <p class="text-body">19h / São marco.Av.paulista</p>
           </div>
           <button class="card-button">#8NJ45B</button>
         </div>
-        <div class="card" onclick="">
+        <div class="card" onclick="extendLobby()">
           <div class="card-details">
             <p class="text-title">Nome Quadra</p>
             <p class="text-body">horas/modalidade</p>
           </div>
           <button class="card-button"># da quadra</button>
         </div>
-        <div class="card" onclick="">
+        <div class="card" onclick="extendLobby()">
           <div class="card-details">
             <p class="text-title">Nome Quadra</p>
             <p class="text-body">horas/modalidade</p>
           </div>
           <button class="card-button"># da quadra</button>
         </div>
-        <div class="card" onclick="">
+        <div class="card" onclick="extendLobby()">
           <div class="card-details">
             <p class="text-title">Nome Quadra</p>
             <p class="text-body">horas/modalidade</p>
           </div>
           <button class="card-button"># da quadra</button>
         </div>
-        <div class="btn-cards"></div>
+      
       </div>
+      
     </section>
 
     <script src="main.js"></script>

@@ -16,7 +16,6 @@
   --toggle-color: #ddd;
   --text-color: #707070;
 
-  /* ====== Transition ====== */
   --tran-03: all 0.2s ease;
   --tran-03: all 0.3s ease;
   --tran-04: all 0.3s ease;
@@ -316,7 +315,6 @@ body.dark .home .text {
 }
 
 .card.text {
-  margin-top: 40px;
   justify-content: center;
   align-items: center;
   text-align: center;

@@ -2,10 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
-    <!-- Link com o CSS -->
     <link rel="stylesheet" href="style.css" />
-    <!-- Fontes exportadas no Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,16 +15,43 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
       rel="stylesheet"
     />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LandingPage</title>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://unpkg.com/jwt-decode/build/jwt/decode.js"></script>
+
+    <script>
+      function handleCredentialResponse(response) {
+        const data = jwt_decode(response.credential);
+        console.log(data);
+      }
+      window.onload = function () {
+        google.accounts.id.initialize({
+          client_id:
+            "224174461717-ioh7qllsui08kcprp09oab1jc1uq5a8q.apps.googleusercontent.com",
+          callback: handleCredentialResponse,
+        });
+        google.accounts.id.renderButton(
+          document.getElementById("buttonDiv"),
+          {
+            theme: "filled_black",
+            size: "large",
+            type: "standard",
+            shape: "pill",
+            text: "signin_with",
+            locale: "pt-BR",
+            logo_alignment: "left",
+          } // customization attributes
+        );
+        google.accounts.id.prompt(); // also display the One Tap dialog
+      };
+    </script>
   </head>
   <body>
     <main>
-      <!-- Inicia a Pageina -->
       <section class="mainPage">
         <header>
-          <!-- Barra de navegação -->
           <nav>
             <div class="container">
               <div class="nav-logo">
@@ -38,29 +62,35 @@
                   />
                 </a>
               </div>
-              <!--  Botões da barra de navegação -->
               <div class="nav-links">
                 <ul>
-                  <button class="navBtn">Modalidades</button>
-                  <button class="navBtn">Suporte</button>
-                  <button class="navBtn">About Us</button>
-                  <button class="navBtn">Sign Up</button>
+                  <button class="navBtn" onclick="scrollToSuporte()">
+                    Modalidades
+                  </button>
+                  <button class="navBtn" onclick="redirectToIndex()">
+                    Suporte
+                  </button>
+                  <button class="navBtn" onclick="scrollToAboutUs()">
+                    About Us
+                  </button>
+                  <button class="navBtn" onclick="scrollToSignUp()">
+                    Sign Up
+                  </button>
                 </ul>
               </div>
             </div>
           </nav>
         </header>
-        <!--  título  principal -->
+
         <section class="text-main">
           <div class="text">
             <h1 class="top">Pratique | Comunique-se | Inove-se</h1>
             <h1 class="down">Venha fazer parte do time QuadraConecta</h1>
           </div>
         </section>
-        <!-- Section 2 - Cards animados  -->
+
         <section class="Suporte">
           <section class="page-suporte">
-            <!-- basquete card -->
             <div class="card-basquete">
               <img
                 src="/assets/SportCharts/basketball-animate.svg"
@@ -68,7 +98,6 @@
                 class="basquete"
               />
             </div>
-            <!-- volei card -->
             <div class="card-volei">
               <img
                 src="/assets/SportCharts/beach-volleyball-animate.svg"
@@ -76,7 +105,6 @@
                 class="volei"
               />
             </div>
-            <!-- soccer card -->
             <div class="card-soccer">
               <img
                 src="/assets/SportCharts/junior-soccer-animate.svg"
@@ -84,7 +112,6 @@
                 class="soccer"
               />
             </div>
-            <!-- tennis card -->
             <div class="card-tennis">
               <img
                 src="/assets/SportCharts/tennis-animate.svg"
@@ -92,23 +119,15 @@
                 class="tennis"
               />
             </div>
-            <!-- Cards - Texto Cards -->
             <div class="text-card-suport">
               <h2>Diversas Modalidades</h2>
             </div>
           </section>
         </section>
-        <!--  Section de Login -->
+
         <section class="register">
           <div class="container-right">
-            <!-- Inicio formulario -->
-            <form
-              class="form"
-              method="get"
-              id="forms"
-              action="/MainSystem/main.html"
-            >
-              <!-- Formulario - email -->
+            <form class="form">
               <div class="flex-column">
                 <label>Email </label>
               </div>
@@ -127,12 +146,11 @@
                 </svg>
                 <input
                   type="text"
-                  id="email"
                   class="input"
                   placeholder="Exemplo: jose32@gmail.com"
                 />
               </div>
-              <!-- Formulario - Senha -->
+
               <div class="flex-column">
                 <label>Senha </label>
               </div>
@@ -150,12 +168,7 @@
                     d="m304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0"
                   ></path>
                 </svg>
-                <input
-                  type="password"
-                  class="input"
-                  placeholder="Sua Senha"
-                  id="password"
-                />
+                <input type="password" class="input" placeholder="Sua Senha" />
                 <svg
                   viewBox="0 0 576 512"
                   height="1.4em"
@@ -166,30 +179,26 @@
                   ></path>
                 </svg>
               </div>
-              <!-- Formulario - Lembrar de min / esqueci a senha -->
+
               <div class="flex-row">
                 <div>
                   <input type="checkbox" />
-                  <label>Lembrar de min </label>
+                  <label>Lembrar de mim</label>
                 </div>
-                <span class="span">Esqueci a senha</span>
+                <span class="span"><a href="">Esqueci a senha</a></span>
               </div>
               <div class="formBTN">
-                <!--Formulario -  Button acessar login -->
-                <button
-                  class="button-submit"
-                  type="submit"
-                  onclick="acessHTMLPAG()"
-                >
-                  Acessar
-                </button>
+                <button class="button-submit">Acessar</button>
               </div>
-              <!-- Formulario - Footer -->
+
               <p class="p">
-                Não tem uma conta? <span class="span">Registrar</span>
+                Não tem uma conta?
+                <span class="span"
+                  ><a href="./registeerSet/formAcesso.html">Registrar</a></span
+                >
               </p>
-              <p class="p line">Também com</p>
-              <!-- Botão Google e Apple -->
+              <p class="p line">Conecte-se com</p>
+
               <div class="flex-row">
                 <button class="btn google">
                   <svg
@@ -258,7 +267,6 @@
               </div>
             </form>
           </div>
-          <!-- Imagem ao lado do Login -->
           <div class="left-side">
             <img
               src="/assets/sign-up-animate (1).svg"
@@ -267,9 +275,7 @@
             />
           </div>
         </section>
-        <!-- Section Sobre nos -->
         <section class="Sobre-nos">
-          <!-- Imagem Sobre nos -->
           <div class="left-side-aboutUs">
             <img
               src="/assets/about-us-page-animate (1).svg"
@@ -277,7 +283,6 @@
               class="img-aboutUs"
             />
           </div>
-          <!-- Texto sobre nos -->
           <div class="right-side-aboutUs">
             <div class="text-main-aboutUs">
               <h2>About us</h2>
@@ -293,7 +298,6 @@
             </div>
           </div>
         </section>
-        <!-- Section Footer -->
         <section class="footer">
           <div class="fot">
             <img
@@ -303,10 +307,11 @@
             />
           </div>
           <div class="fot-copy">
-            <p>todos os direitos reservados a QuadraConecta ltda</p>
+            <p>Todos os direitos reservados a QuadraConecta Ltda</p>
           </div>
         </section>
       </section>
     </main>
+    <script src="main.js"></script>
   </body>
 </html>
