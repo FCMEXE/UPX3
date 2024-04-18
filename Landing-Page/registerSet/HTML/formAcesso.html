@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="styleAcesso.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,6 +16,12 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" href="/Landing-Page/registerSet/CSS/styleAcesso.css" />
+
+    <script src="/Landing-Page/registerSet/JS/scriptProp.js"></script>
+    <script src="/Landing-Page/registerSet/JS/scriptUser.js"></script>
+
     <title>Escolha de Acesso</title>
   </head>
 
@@ -27,15 +32,31 @@
           <div class="container-right">
             <form class="form">
 
+              <div>
+                <img
+                  src="/Landing-Page/registerSet/imageAcess/acessAnimate.svg"
+                  alt=""
+                  class="acessAnimate"
+                />
+              </div>
+
               <h1>Selecione um Perfil de Acesso</h1>
               <p></p>
 
               <div class="formBTN">
-                <button class="button-submit"><a href="formRegisterProp.html">Registrar-se como Proprietário</a></button>
+
+                <button class="buttonProp" onclick="redirectToProp()">
+                  Registrar-se como Proprietário
+                </button>
+
               </div>
 
               <div class="formBTN">
-                <button class="button-submit"><a href="formRegisterUser.html">Registrar-se como Usuário</a></button>
+
+                <button class="buttonUser" onclick="redirectToUser()">
+                  Registrar-se como Usuário
+                </button>
+
               </div>
 
             </form>

@@ -1,5 +1,5 @@
 function redirectTolandingPage() {
-  window.location.href = "/Landing-Page/landingPage.html";
+  window.location.href = "/Landing-Page/index.html";
 }
 
 function redirectToWhatsApp() {

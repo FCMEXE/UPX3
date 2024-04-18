@@ -1,0 +1,133 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.mainPage {
+  overflow: auto;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(138, 138, 138, 0.8169642857142857) 50%,
+    rgb(0, 0, 0) 100%
+  );
+}
+
+.container-right {
+  position: absolute;
+  width: 50vw;
+  height: 100vh;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.register {
+  width: 100vw;
+  height: 100vh;
+  top: 50;
+  z-index: 999;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 30px;
+  margin-top: 75px;
+  margin-bottom: 40px;
+  margin-left: 30px;
+  width: 40vw;
+  height: 70vh;
+  border-radius: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  box-shadow: 0 4px 50px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+  
+.name-resgister > label {
+  color: #151717;
+  font-weight: 600;
+}
+.tel-resgister > label {
+  color: #151717;
+  font-weight: 600;
+}
+.date-resgister > label {
+  color: #151717;
+  font-weight: 600;
+}
+.cpf-resgister > label {
+  color: #151717;
+  font-weight: 600;
+}
+.email-resgister > label {
+  color: #151717;
+  font-weight: 600;
+}
+.senha-resgister > label {
+  color: #151717;
+  font-weight: 600;
+}
+
+.button-submit {
+  margin: 20px 0 10px 0;
+  background-color: #151717;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 10px;
+  height: 50px;
+  width: 100%;
+  cursor: pointer;
+}
+.button-submit:hover {
+  background-color: #252727;
+}
+
+.inputForm {
+  border: 1.5px solid #ecedec;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  transition: 0.2s ease-in-out;
+}
+.input {
+  margin-left: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 100vw;
+  height: 3vh;
+}
+.input:focus {
+  outline: none;
+}
+.inputForm:focus-within {
+  border: 1.5px solid #2d79f3;
+}
+
+.formBTN {
+  font-size: 12px;
+  font-weight: 30px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}

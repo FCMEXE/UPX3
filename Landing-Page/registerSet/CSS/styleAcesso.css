@@ -1,0 +1,108 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.mainPage {
+  overflow: auto;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgb(10, 110, 18) 0%,
+    rgba(33, 138, 7, 0.89) 50%,
+    rgb(4, 77, 10) 100%
+  );
+}
+
+.container-right {
+  position: absolute;
+  width: 50vw;
+  height: 100vh;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.register {
+  width: 100vw;
+  height: 100vh;
+  top: 50;
+  z-index: 999;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 30px;
+  margin-top: 75px;
+  margin-bottom: 40px;
+  margin-left: 30px;
+  width: 650px;
+  height: 800px;
+  border-radius: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  box-shadow: 0 4px 50px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+.acessAnimate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90%;
+}
+
+.buttonProp {
+  margin: 20px 0 10px 0;
+  background-color: #151717;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 10px;
+  height: 50px;
+  width: 100%;
+  cursor: pointer;
+}
+.buttonProp:hover {
+  background-color: #2e2f33;
+}
+
+.buttonUser {
+  margin: 20px 0 10px 0;
+  background-color: #151717;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 10px;
+  height: 50px;
+  width: 100%;
+  cursor: pointer;
+}
+.buttonUser:hover {
+  background-color: #2e2f33;
+}
+
+.formBTN {
+  font-size: 12px;
+  font-weight: 30px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
