@@ -3,5 +3,212 @@
   margin: 0px;
   overflow-y: hidden;
   overflow-x: hidden;
+  overflow-y: hidden;
+
+  display: flex;
+
+  background: rgb(255, 255, 255);
 }
 
+body {
+  min-height: 100vh;
+  background-color: var(--body-color);
+  transition: var(--tran-05);
+}
+
+.QuadraContainer nav {
+  display: flex;
+  width: 90vw;
+  height: 20%;
+  z-index: 2;
+  position: fixed;
+  padding-top: 15px;
+  padding-left: 40px;
+}
+
+.QuadraContainer .container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.QuadraContainer .nav-links ul {
+  display: flex;
+  list-style: none;
+
+  width: 100%;
+  height: 100%;
+}
+
+.QuadraContainer .nav-links li {
+  margin-right: 30px;
+}
+
+.QuadraContainer .navBtn {
+  margin-top: 10px;
+  padding: 1.3em 3em;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 6.5px;
+  font-weight: 500;
+  color: #000000;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  border-radius: 45px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.QuadraContainer .navBtn:hover {
+  background-color: #695cfe;
+  color: #fff;
+}
+
+.QuadraContainer .navBtn:active {
+  transform: translateY(-1px);
+}
+
+.QuadraContainer .searchBar {
+  margin-top: 10px;
+  padding: 1.3em 3em;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #707070;
+  background-color: rgba(255, 255, 255, 0);
+  border: solid 3px black;
+  border-radius: 45px;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.QuadraContainer .searchBar:hover {
+  border: solid 3px #695cfe;
+  transition: all 0.3s ease 0s;
+  background-color: #ffffff;
+}
+.QuadraContainer input[class="searchBar"]::placeholder {
+  letter-spacing: 6.5px;
+  font-weight: 500;
+  color: rgba(59, 59, 59, 0.918);
+}
+
+.cardsSec {
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-top: 150px;
+  height: 100%;
+  width: 100vw;
+  margin: auto;
+}
+
+.cardsSec .containerCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 99%;
+  margin: 40px;
+}
+
+.cardsSec .containerCard .card {
+  position: relative;
+  min-width: 320px;
+  height: 440px;
+
+  margin: 30px;
+  transition: 0.5s;
+}
+
+.cardsSec .containerCard .box .content .btnCard {
+  background: #695cfe;
+}
+
+.cardsSec .containerCard .card .box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: #695cfe;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.cardsSec .containerCard .card .box:hover {
+  transform: translateY(-50px);
+}
+
+.cardsSec .containerCard .card .box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.096);
+}
+
+.cardsSec .containerCard .card .box .content {
+  padding: 20px;
+  text-align: center;
+}
+
+.cardsSec .containerCard .card .box .content h2 {
+  position: absolute;
+  top: -10px;
+  right: 30px;
+  font-size: 8rem;
+  color: rgba(255, 255, 255, 0.267);
+}
+
+.cardsSec .containerCard .card .box .content h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  z-index: 1;
+  transition: 0.5s;
+  margin-bottom: 15px;
+}
+
+.cardsSec .containerCard .card .box .content p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.cardsSec .containerCard .card .box .content .btnCard {
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  background: #695cfe;
+  border-radius: 5px;
+  border: solid 2px white;
+  text-decoration: none;
+  color: white;
+  margin-top: 20px;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.342);
+  transition: 0.5s;
+  font-family: "Poppins", sans-serif;
+}
+.cardsSec .containerCard .card .box .content .btnCard:hover {
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.562);
+  background: #fff;
+  color: #000;
+}
