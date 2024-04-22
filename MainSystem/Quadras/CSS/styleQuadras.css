@@ -14,6 +14,12 @@
   );
 }
 
+body {
+  min-height: 100vh;
+  background-color: var(--body-color);
+  transition: var(--tran-05);
+}
+
 .QuadraContainer nav {
   display: flex;
   width: 90vw;
@@ -123,10 +129,7 @@
   position: relative;
   min-width: 320px;
   height: 440px;
-  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
-    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
-    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
+
   margin: 30px;
   transition: 0.5s;
 }
@@ -148,6 +151,7 @@
   align-items: center;
   overflow: hidden;
   transition: 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .cardsSec .containerCard .card .box:hover {
