@@ -1,13 +1,4 @@
-html, body {
-  padding: 0px;
-  margin: 0px;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  height: 100%;
-  font-family: "Poppins", sans-serif;
-}
-
-.mainPage {
+.QuadraContainer .mainPage {
   overflow: auto;
   height: 100vh;
   overflow-x: hidden;
@@ -23,34 +14,38 @@ html, body {
   );
 }
 
-nav {
+.QuadraContainer nav {
   display: flex;
-  width: 100vw;
-  height: 14%;
+  width: 90vw;
+  height: 20%;
   z-index: 2;
   position: fixed;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding-top: 15px;
+  padding-left: 40px;
 }
 
-.container {
+.QuadraContainer .container {
   display: flex;
-  justify-content: end;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
   height: 100%;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
-.nav-links ul {
+.QuadraContainer .nav-links ul {
   display: flex;
   list-style: none;
+
+  width: 100%;
+  height: 100%;
 }
 
-.nav-links li {
+.QuadraContainer .nav-links li {
   margin-right: 30px;
 }
 
-.navBtn {
+.QuadraContainer .navBtn {
   margin-top: 10px;
   padding: 1.3em 3em;
   font-size: 15px;
@@ -69,16 +64,16 @@ nav {
   font-style: normal;
 }
 
-.navBtn:hover {
+.QuadraContainer .navBtn:hover {
   background-color: #ff7575;
   color: #fff;
 }
 
-.navBtn:active {
+.QuadraContainer .navBtn:active {
   transform: translateY(-1px);
 }
 
-.searchBar {
+.QuadraContainer .searchBar {
   margin-top: 10px;
   padding: 1.3em 3em;
   font-size: 15px;
@@ -92,12 +87,12 @@ nav {
   font-weight: 600;
   font-style: normal;
 }
-.searchBar:hover {
+.QuadraContainer .searchBar:hover {
   border: solid 3px #ff7575;
   transition: all 0.3s ease 0s;
   background-color: #ffffff;
 }
-input[class="searchBar"]::placeholder {
+.QuadraContainer input[class="searchBar"]::placeholder {
   letter-spacing: 6.5px;
   font-weight: 500;
   color: rgba(59, 59, 59, 0.918);
@@ -107,22 +102,24 @@ input[class="searchBar"]::placeholder {
   background-color: #fff;
   display: flex;
   justify-content: flex-start;
-  border-radius: 20px;
-  height: 70vh;
-  width: 90vw;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-top: 150px;
+  height: 100%;
+  width: 100vw;
   margin: auto;
 }
 
-.containerCard{
+.cardsSec .containerCard {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  max-width: 100%;
+  max-width: 99%;
   margin: 40px;
 }
 
-.containerCard .card {
+.cardsSec .containerCard .card {
   position: relative;
   min-width: 320px;
   height: 440px;
@@ -134,11 +131,11 @@ input[class="searchBar"]::placeholder {
   transition: 0.5s;
 }
 
-.containerCard .box .content .btnCard {
+.cardsSec .containerCard .box .content .btnCard {
   background: #ff7575;
 }
 
-.containerCard .card .box {
+.cardsSec .containerCard .card .box {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -153,11 +150,11 @@ input[class="searchBar"]::placeholder {
   transition: 0.5s;
 }
 
-.containerCard .card .box:hover {
+.cardsSec .containerCard .card .box:hover {
   transform: translateY(-50px);
 }
 
-.containerCard .card .box:before {
+.cardsSec .containerCard .card .box:before {
   content: "";
   position: absolute;
   top: 0;
@@ -167,12 +164,12 @@ input[class="searchBar"]::placeholder {
   background: rgba(255, 255, 255, 0.096);
 }
 
-.containerCard .card .box .content {
+.cardsSec .containerCard .card .box .content {
   padding: 20px;
   text-align: center;
 }
 
-.containerCard .card .box .content h2 {
+.cardsSec .containerCard .card .box .content h2 {
   position: absolute;
   top: -10px;
   right: 30px;
@@ -180,7 +177,7 @@ input[class="searchBar"]::placeholder {
   color: rgba(255, 255, 255, 0.267);
 }
 
-.containerCard .card .box .content h3 {
+.cardsSec .containerCard .card .box .content h3 {
   font-size: 1.8rem;
   color: #fff;
   z-index: 1;
@@ -188,7 +185,7 @@ input[class="searchBar"]::placeholder {
   margin-bottom: 15px;
 }
 
-.containerCard .card .box .content p {
+.cardsSec .containerCard .card .box .content p {
   font-size: 1rem;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.9);
@@ -196,7 +193,7 @@ input[class="searchBar"]::placeholder {
   transition: 0.5s;
 }
 
-.containerCard .card .box .content .btnCard {
+.cardsSec .containerCard .card .box .content .btnCard {
   position: relative;
   display: inline-block;
   padding: 8px 20px;
@@ -210,7 +207,7 @@ input[class="searchBar"]::placeholder {
   transition: 0.5s;
   font-family: "Poppins", sans-serif;
 }
-.containerCard .card .box .content .btnCard:hover {
+.cardsSec .containerCard .card .box .content .btnCard:hover {
   box-shadow: 0 10px 20px rgba(255, 255, 255, 0.562);
   background: #fff;
   color: #000;
