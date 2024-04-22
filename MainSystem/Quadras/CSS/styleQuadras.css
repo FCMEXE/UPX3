@@ -6,12 +6,6 @@
   display: flex;
 
   background: rgb(255, 255, 255);
-  background: linear-gradient(
-    to top,
-    #ff7575 0%,
-    #f5a1a1 50%,
-    rgb(255, 255, 255) 100%
-  );
 }
 
 body {
@@ -71,7 +65,7 @@ body {
 }
 
 .QuadraContainer .navBtn:hover {
-  background-color: #ff7575;
+  background-color: #695cfe;
   color: #fff;
 }
 
@@ -94,7 +88,7 @@ body {
   font-style: normal;
 }
 .QuadraContainer .searchBar:hover {
-  border: solid 3px #ff7575;
+  border: solid 3px #695cfe;
   transition: all 0.3s ease 0s;
   background-color: #ffffff;
 }
@@ -135,7 +129,7 @@ body {
 }
 
 .cardsSec .containerCard .box .content .btnCard {
-  background: #ff7575;
+  background: #695cfe;
 }
 
 .cardsSec .containerCard .card .box {
@@ -144,7 +138,7 @@ body {
   left: 20px;
   right: 20px;
   bottom: 20px;
-  background: #f5a1a1;
+  background: #695cfe;
   border-radius: 15px;
   display: flex;
   justify-content: center;
@@ -201,7 +195,7 @@ body {
   position: relative;
   display: inline-block;
   padding: 8px 20px;
-  background: #ff7575;
+  background: #695cfe;
   border-radius: 5px;
   border: solid 2px white;
   text-decoration: none;
