@@ -51,7 +51,7 @@
   margin-bottom: 40px;
   margin-left: 30px;
   width: 40vw;
-  height: 70vh;
+  height: 800px;
   border-radius: 20px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
@@ -59,7 +59,7 @@
   box-shadow: 0 4px 50px 5px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
 }
-  
+
 .name-resgister > label {
   color: #151717;
   font-weight: 600;
