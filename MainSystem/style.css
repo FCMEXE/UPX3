@@ -433,3 +433,28 @@ hr {
   background-color: #f1382b;
   transform: scale(1.1);
 }
+
+.agenda .container {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.agenda h1 {
+  text-align: center;
+}
+
+.agenda table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.agenda th, td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  background-color: #f2f2f2;
+}
+
+.agenda th:first-child {
+  width: 100px; /* Largura da coluna do horário */
+}
