@@ -452,7 +452,14 @@ hr {
   padding: 10px;
   text-align: center;
   border: 1px solid #ddd;
+}
+
+.agenda th {
   background-color: #f2f2f2;
+}
+
+.agenda td {
+  background-color: #fff;
 }
 
 .agenda th:first-child {
