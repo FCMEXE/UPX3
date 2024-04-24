@@ -1,35 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Logout</title>
-    <link rel="stylesheet" href="styleLogout.css">
-</head>
+    <link rel="stylesheet" href="styleLogout.css" />
+  </head>
 
-<body>
+  <body>
     <section class="logout">
-
-        <div class="container">
-            <h2>Confirmação de Logout</h2>
-            <p>Você tem certeza que deseja sair do sistema?</p>
-            <button id="yes">Sim</button>
-            <button id="cancel">Cancelar</button>
-        </div>
-
-        <script>
-            document.getElementById("yes").addEventListener("click", function() {
-                alert("Você foi desconectado!");
-                window.location.href = "../../Landing-Page/index.html";
-            });
-
-            document.getElementById("cancel").addEventListener("click", function() {
-                window.history.back;
-                // window.location.href = "../Home/home.html";
-            });
-        </script>
+      <div class="container">
+        <h2>Confirmação de Logout</h2>
+        <p>Você tem certeza que deseja sair do sistema?</p>
+        <button id="yes">Sim</button>
+        <button id="cancel">Cancelar</button>
+      </div>
     </section>
-</body>
-
+  </body>
 </html>
