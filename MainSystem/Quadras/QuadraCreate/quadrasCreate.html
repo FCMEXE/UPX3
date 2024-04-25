@@ -19,7 +19,7 @@
       <section class="mainPage">
         <section class="register">
           <div class="container-right">
-            <form class="form">
+            <form class="form" id="quadraForm">
               <h1>CADASTRAR QUADRA</h1>
               <p></p>
 
@@ -30,6 +30,7 @@
                     type="text"
                     class="input"
                     id="name"
+                    name="name"
                     placeholder="Digite seu nome completo"
                     required
                   />
@@ -37,13 +38,14 @@
               </div>
 
               <div class="num-jogadores">
-                <label for="numJogadores">Numero de Jogadores: </label>
+                <label for="numJogadores">Número de Jogadores:</label>
                 <div class="inputForm">
                   <input
                     type="number"
                     class="input"
-                    id="numJOgadores"
-                    placeholder="2,3,5,6"
+                    id="numJogadores"
+                    name="numJogadores"
+                    placeholder="2, 3, 5, 6"
                     maxlength="11"
                     required
                   />
@@ -51,13 +53,14 @@
               </div>
 
               <div class="endereco">
-                <label for="cpf">Endereço</label>
+                <label for="endereco">Endereço</label>
                 <div class="inputForm">
                   <input
                     type="text"
                     class="input"
                     id="endereco"
-                    placeholder="av.paulista"
+                    name="endereco"
+                    placeholder="Av. Paulista"
                     maxlength="99"
                     required
                   />
@@ -65,200 +68,108 @@
               </div>
 
               <div class="precoPorHora">
-                <label for="date">Preço por Hora </label>
+                <label for="precoPorHora">Preço por Hora</label>
                 <div class="inputForm">
                   <input
                     type="number"
                     class="input"
-                    id="PrecoPorHora"
-                    placeholder="R$: 10.00"
+                    id="precoPorHora"
+                    name="precoPorHora"
+                    placeholder="R$ 10.00"
                     required
                   />
                 </div>
               </div>
 
               <div class="email-register">
-                <label for="email">Email </label>
+                <label for="email">Email</label>
                 <div class="inputForm">
                   <input
                     type="text"
                     class="input"
                     id="email"
+                    name="email"
                     placeholder="Exemplo: jose32@gmail.com"
                     required
                   />
                 </div>
               </div>
+
               <div class="typeQuadras">
                 <label for="typeQuadras">Tipos de Terreno</label>
-                <input
-                    type="checkbox"
-                    id="TypeQuadra"
-                    name="TypeTerra"
-                    value="1"
-                  />
-                  <label for="Horarios"> Terra </label>
+                <div class="inputForm">
                   <input
                     type="checkbox"
-                    id="TypeQuadra"
-                    name="TypeCimento"
-                    value="2"
+                    id="terra"
+                    name="terreno"
+                    value="Terra"
                   />
-                  <label for="Horarios"> Cimento </label>
-
+                  <label for="terra">Terra</label>
                   <input
                     type="checkbox"
-                    id="TypeQudra"
-                    name="horarioDisp"
-                    value="5:00"
+                    id="cimento"
+                    name="terreno"
+                    value="Cimento"
                   />
-                  <label for="Horarios"> Areia </label>
-                   <input
+                  <label for="cimento">Cimento</label>
+                  <input
                     type="checkbox"
-                    id="HorarioDispo"
-                    name="horarioDisp"
-                    value="5:00"
+                    id="areia"
+                    name="terreno"
+                    value="Areia"
                   />
-                  <label for="Horarios"> Borracha </label>
-
-
+                  <label for="areia">Areia</label>
+                  <input
+                    type="checkbox"
+                    id="borracha"
+                    name="terreno"
+                    value="Borracha"
+                  />
+                  <label for="borracha">Borracha</label>
+                </div>
               </div>
-
               <div class="HorariosDispo">
-                <label for="Horarios Disponiveis">Horarios Disponiveis</label>
-               
+                <label>Horários Disponíveis</label>
                 <div>
-                  <input
-                    type="checkbox"
-                    id="HorarioDispo"
-                    name="horarioDisp"
-                    value="5:00"
-                  />
-                  <label for="Horarios"> 5:00 </label>
-                  <input
-                    type="checkbox"
-                    id="HorarioDispo"
-                    name="horarioDisp"
-                    value="6:00"
-                  />
-                  <label for="Horarios"> 6:00 </label>
-                  <input
-                    type="checkbox"
-                    id="HorarioDispo"
-                    name="horarioDisp"
-                    value="7:00"
-                  />
-                  <label for="Horarios"> 7:00 </label>
-                  <input
-                    type="checkbox"
-                    id="HorarioDispo"
-                    name="horarioDisp"
-                    value="8:00"
-                  />
-                  <label for="Horarios"> 8:00 </label>
-                  <input
-                    type="checkbox"
-                    id="HorarioDispo"
-                    name="horarioDisp"
-                    value="9:00"
-                  />
-                  <label for="Horarios"> 9:00 </label>
-                  <input
-                    type="checkbox"
-                    id="HorarioDispo"
-                    name="horarioDisp"
-                    value="10:00"
-                  />
-                  <label for="Horarios"> 10:00 </label>
-                  <input
-                    type="checkbox"
-                    id="HorarioDispo"
-                    name="horarioDisp"
-                    value="11:00"
-                  />
-                  <label for="Horarios"> 11:00 </label>
-                  <input
-                    type="checkbox"
-                    id="HorarioDispo"
-                    name="horarioDisp"
-                    value="12:00"
-                  />
-                  <label for="Horarios"> 12:00 </label>
-                  <input
-                    type="checkbox"
-                    id="HorarioDispo"
-                    name="horarioDisp"
-                    value="13:00"
-                  />
-                  <br>
-                  <label for="Horarios"> 13:00 </label>
-                  <input
-                    type="checkbox"
-                    id="HorarioDispo"
-                    name="horarioDisp"
-                    value="14:00"
-                  />
-                  <label for="Horarios"> 14:00 </label>
-                  <input
-                    type="checkbox"
-                    id="HorarioDispo"
-                    name="horarioDisp"
-                    value="15:00"
-                  />
-                  <label for="Horarios"> 15:00 </label>
-                  <input
-                    type="checkbox"
-                    id="HorarioDispo"
-                    name="horarioDisp"
-                    value="16:00"
-                  />
-                  <label for="Horarios"> 16:00 </label>
-                  <input
-                    type="checkbox"
-                    id="HorarioDispo"
-                    name="horarioDisp"
-                    value="17:00"
-                  />
-                  <label for="Horarios"> 17:00 </label>
-                  <input
-                    type="checkbox"
-                    id="HorarioDispo"
-                    name="horarioDisp"
-                    value="18:00"
-                  />
-                  <label for="Horarios"> 18:00 </label>
-                  <input
-                    type="checkbox"
-                    id="HorarioDispo"
-                    name="horarioDisp"
-                    value="19:00"
-                  />
-                  <label for="Horarios"> 19:00 </label>
-                  <input
-                    type="checkbox"
-                    id="HorarioDispo"
-                    name="horarioDisp"
-                    value="20:00"
-                  />
-                  <label for="Horarios"> 20:00 </label>
-                  <input
-                    type="checkbox"
-                    id="HorarioDispo"
-                    name="horarioDisp"
-                    value="21:00"
-                  />
-                  <label for="Horarios"> 21:00 </label>
-                  <input
-                    type="checkbox"
-                    id="HorarioDispo"
-                    name="horarioDisp"
-                    value="22:00"
-                  />
-                  <label for="Horarios"> 22:00 </label>
-                 
-
-              </div>
-
+                    <input type="checkbox" id="horario5" name="horarios" value="5:00" />
+                    <label for="horario5">5:00</label>
+                    <input type="checkbox" id="horario6" name="horarios" value="6:00" />
+                    <label for="horario6">6:00</label>
+                    <input type="checkbox" id="horario7" name="horarios" value="7:00" />
+                    <label for="horario7">7:00</label>
+                    <input type="checkbox" id="horario8" name="horarios" value="8:00" />
+                    <label for="horario8">8:00</label>
+                    <input type="checkbox" id="horario9" name="horarios" value="9:00" />
+                    <label for="horario9">9:00</label>
+                    <input type="checkbox" id="horario10" name="horarios" value="10:00" />
+                    <label for="horario10">10:00</label>
+                    <input type="checkbox" id="horario11" name="horarios" value="11:00" />
+                    <label for="horario11">11:00</label>
+                    <input type="checkbox" id="horario12" name="horarios" value="12:00" />
+                    <label for="horario12">12:00</label>
+                    <input type="checkbox" id="horario13" name="horarios" value="13:00" />
+                    <label for="horario13">13:00</label>
+                    <input type="checkbox" id="horario14" name="horarios" value="14:00" />
+                    <label for="horario14">14:00</label>
+                    <input type="checkbox" id="horario15" name="horarios" value="15:00" />
+                    <label for="horario15">15:00</label>
+                    <input type="checkbox" id="horario16" name="horarios" value="16:00" />
+                    <label for="horario16">16:00</label>
+                    <input type="checkbox" id="horario17" name="horarios" value="17:00" />
+                    <label for="horario17">17:00</label>
+                    <input type="checkbox" id="horario18" name="horarios" value="18:00" />
+                    <label for="horario18">18:00</label>
+                    <input type="checkbox" id="horario19" name="horarios" value="19:00" />
+                    <label for="horario19">19:00</label>
+                    <input type="checkbox" id="horario20" name="horarios" value="20:00" />
+                    <label for="horario20">20:00</label>
+                    <input type="checkbox" id="horario21" name="horarios" value="21:00" />
+                    <label for="horario21">21:00</label>
+                    <input type="checkbox" id="horario22" name="horarios" value="22:00" />
+                    <label for="horario22">22:00</label>
+                </div>
+            </div>
+            
               <div class="formBTN">
                 <button id="registerButton" class="button-submit">
                   Registrar
@@ -269,5 +180,7 @@
         </section>
       </section>
     </main>
+
+    <script src="quadrasCreate.js"></script>
   </body>
 </html>
