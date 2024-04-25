@@ -1,3 +1,3 @@
-function getInfo(params) {
-  window.location.href = "/Qaudras/QuadraCreate/quadrasCreate.html";
+function getInfo() {
+  window.location.href = "MainSystem/Quadras/QuadraCreate/quadrasCreate.html";
 }
