@@ -15,9 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="/MainSystem/Quadras/CSS/styleQuadras.css" />
-    <script src="/MainSystem/Quadras/JS/functionsQuadras.js"></script>
 
     <title>Quadras - QuadraConecta</title>
   </head>
@@ -28,18 +26,18 @@
           <div class="container">
             <div class="nav-links">
               <ul>
-                <form method="get" action="">
+                <form method="post" action="">
                   <input
                     type="text"
                     name="pesquisa"
                     id="pesquisa"
                     class="searchBar"
-                    placeholder="Pesquisar..."
+                    placeholder=" Pesquisar..."
                     required
                   />
                 </form>
 
-                <button class="navBtn">
+                <button class="navBtn" onclick="redirectToLand()">
                   Filtros
                 </button>
 
@@ -47,240 +45,22 @@
                   suporte
                 </button>
 
-                <button class="navBtn">
-                  Criar Quadra
-                </button>
+                <a class="navBtn" href="/MainSystem/Quadras/QuadraCreate/quadrasCreate.html"
+                  >Criar Quadra
+                </a
+                >
               </ul>
             </div>
           </div>
         </nav>
       </header>
+
       <section class="cardsSec">
-        <div class="containerCard">
-          <div class="card">
-            <div class="box">
-              <div class="content">
-                <h2>01</h2>
-                <h3>Card One</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, totam velit? Iure nemo labore inventore?
-                </p>
-                <button class="btnCard" onclick="getInfo()">
-                  Detalhes da quadra
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="containerCard">
-          <div class="card">
-            <div class="box">
-              <div class="content">
-                <h2>02</h2>
-                <h3>Card Two</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, totam velit? Iure nemo labore inventore?
-                </p>
-                <button class="btnCard" onclick="getInfo()">
-                  Detalhes da quadra
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="containerCard">
-          <div class="card">
-            <div class="box">
-              <div class="content">
-                <h2>03</h2>
-                <h3>Card Three</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, totam velit? Iure nemo labore inventore?
-                </p>
-                <button class="btnCard" onclick="getInfo()">
-                  Detalhes da quadra
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="containerCard">
-          <div class="card">
-            <div class="box">
-              <div class="content">
-                <h2>04</h2>
-                <h3>Card Four</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, totam velit? Iure nemo labore inventore?
-                </p>
-                <button class="btnCard" onclick="getInfo()">
-                  Detalhes da quadra
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="containerCard">
-          <div class="card">
-            <div class="box">
-              <div class="content">
-                <h2>04</h2>
-                <h3>Card Four</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, totam velit? Iure nemo labore inventore?
-                </p>
-                <button class="btnCard" onclick="getInfo()">
-                  Detalhes da quadra
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="containerCard">
-          <div class="card">
-            <div class="box">
-              <div class="content">
-                <h2>04</h2>
-                <h3>Card Four</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, totam velit? Iure nemo labore inventore?
-                </p>
-                <button class="btnCard" onclick="getInfo()">
-                  Detalhes da quadra
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="containerCard">
-          <div class="card">
-            <div class="box">
-              <div class="content">
-                <h2>04</h2>
-                <h3>Card Four</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, totam velit? Iure nemo labore inventore?
-                </p>
-                <button class="btnCard" onclick="getInfo()">
-                  Detalhes da quadra
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="containerCard">
-          <div class="card">
-            <div class="box">
-              <div class="content">
-                <h2>04</h2>
-                <h3>Card Four</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, totam velit? Iure nemo labore inventore?
-                </p>
-                <button class="btnCard" onclick="getInfo()">
-                  Detalhes da quadra
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="containerCard">
-          <div class="card">
-            <div class="box">
-              <div class="content">
-                <h2>04</h2>
-                <h3>Card Four</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, totam velit? Iure nemo labore inventore?
-                </p>
-                <button class="btnCard" onclick="getInfo()">
-                  Detalhes da quadra
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="containerCard">
-          <div class="card">
-            <div class="box">
-              <div class="content">
-                <h2>04</h2>
-                <h3>Card Four</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, totam velit? Iure nemo labore inventore?
-                </p>
-                <button class="btnCard" onclick="getInfo()">
-                  Detalhes da quadra
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="containerCard">
-          <div class="card">
-            <div class="box">
-              <div class="content">
-                <h2>04</h2>
-                <h3>Card Four</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, totam velit? Iure nemo labore inventore?
-                </p>
-                <button class="btnCard" onclick="getInfo()">
-                  Detalhes da quadra
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="containerCard">
-          <div class="card">
-            <div class="box">
-              <div class="content">
-                <h2>04</h2>
-                <h3>Card Four</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, totam velit? Iure nemo labore inventore?
-                </p>
-                <button class="btnCard" onclick="getInfo()">
-                  Detalhes da quadra
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="containerCard">
-          <div class="card">
-            <div class="box">
-              <div class="content">
-                <h2>04</h2>
-                <h3>Card Four</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, totam velit? Iure nemo labore inventore?
-                </p>
-                <button class="btnCard" onclick="getInfo()">
-                  Detalhes da quadra
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </section>
+
     </section>
+    <script src="quadrasCreate.js"></script>
+    <script src="quadras.js"></script>
   </body>
 </html>

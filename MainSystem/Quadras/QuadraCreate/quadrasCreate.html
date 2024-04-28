@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="QuadraCreate.css" />
+
+    <title>Registro de quadra</title>
+  </head>
+
+  <body>
+    <main>
+      <section class="mainPage">
+        <section class="register">
+          <div class="container-right">
+            <form class="form" id="quadraForm">
+              <h1>CADASTRAR QUADRA</h1>
+              <p></p>
+
+              <div class="name-register">
+                <label for="name">Nome</label>
+                <div class="inputForm">
+                  <input
+                    type="text"
+                    class="input"
+                    id="name"
+                    name="name"
+                    placeholder="Digite seu nome completo"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="num-jogadores">
+                <label for="numJogadores">Número de Jogadores:</label>
+                <div class="inputForm">
+                  <input
+                    type="number"
+                    class="input"
+                    id="numJogadores"
+                    name="numJogadores"
+                    placeholder="2, 3, 5, 6"
+                    maxlength="11"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="endereco">
+                <label for="endereco">Endereço</label>
+                <div class="inputForm">
+                  <input
+                    type="text"
+                    class="input"
+                    id="endereco"
+                    name="endereco"
+                    placeholder="Av. Paulista"
+                    maxlength="99"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="precoPorHora">
+                <label for="precoPorHora">Preço por Hora</label>
+                <div class="inputForm">
+                  <input
+                    type="number"
+                    class="input"
+                    id="precoPorHora"
+                    name="precoPorHora"
+                    placeholder="R$ 10.00"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="email-register">
+                <label for="email">Email</label>
+                <div class="inputForm">
+                  <input
+                    type="text"
+                    class="input"
+                    id="email"
+                    name="email"
+                    placeholder="Exemplo: jose32@gmail.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="typeQuadras">
+                <label for="typeQuadras">Tipos de Terreno</label>
+                <div class="inputForm">
+                  <input
+                    type="checkbox"
+                    id="terra"
+                    name="terreno"
+                    value="Terra"
+                  />
+                  <label for="terra">Terra</label>
+                  <input
+                    type="checkbox"
+                    id="cimento"
+                    name="terreno"
+                    value="Cimento"
+                  />
+                  <label for="cimento">Cimento</label>
+                  <input
+                    type="checkbox"
+                    id="areia"
+                    name="terreno"
+                    value="Areia"
+                  />
+                  <label for="areia">Areia</label>
+                  <input
+                    type="checkbox"
+                    id="borracha"
+                    name="terreno"
+                    value="Borracha"
+                  />
+                  <label for="borracha">Borracha</label>
+                </div>
+              </div>
+              <div class="HorariosDispo">
+                <label>Horários Disponíveis</label>
+                <div>
+                    <input type="checkbox" id="horario5" name="horarios" value="5:00" />
+                    <label for="horario5">5:00</label>
+                    <input type="checkbox" id="horario6" name="horarios" value="6:00" />
+                    <label for="horario6">6:00</label>
+                    <input type="checkbox" id="horario7" name="horarios" value="7:00" />
+                    <label for="horario7">7:00</label>
+                    <input type="checkbox" id="horario8" name="horarios" value="8:00" />
+                    <label for="horario8">8:00</label>
+                    <input type="checkbox" id="horario9" name="horarios" value="9:00" />
+                    <label for="horario9">9:00</label>
+                    <input type="checkbox" id="horario10" name="horarios" value="10:00" />
+                    <label for="horario10">10:00</label>
+                    <input type="checkbox" id="horario11" name="horarios" value="11:00" />
+                    <label for="horario11">11:00</label>
+                    <input type="checkbox" id="horario12" name="horarios" value="12:00" />
+                    <label for="horario12">12:00</label>
+                    <input type="checkbox" id="horario13" name="horarios" value="13:00" />
+                    <label for="horario13">13:00</label>
+                    <input type="checkbox" id="horario14" name="horarios" value="14:00" />
+                    <label for="horario14">14:00</label>
+                    <input type="checkbox" id="horario15" name="horarios" value="15:00" />
+                    <label for="horario15">15:00</label>
+                    <input type="checkbox" id="horario16" name="horarios" value="16:00" />
+                    <label for="horario16">16:00</label>
+                    <input type="checkbox" id="horario17" name="horarios" value="17:00" />
+                    <label for="horario17">17:00</label>
+                    <input type="checkbox" id="horario18" name="horarios" value="18:00" />
+                    <label for="horario18">18:00</label>
+                    <input type="checkbox" id="horario19" name="horarios" value="19:00" />
+                    <label for="horario19">19:00</label>
+                    <input type="checkbox" id="horario20" name="horarios" value="20:00" />
+                    <label for="horario20">20:00</label>
+                    <input type="checkbox" id="horario21" name="horarios" value="21:00" />
+                    <label for="horario21">21:00</label>
+                    <input type="checkbox" id="horario22" name="horarios" value="22:00" />
+                    <label for="horario22">22:00</label>
+                </div>
+            </div>
+            
+              <div class="formBTN">
+                <button id="registerButton" class="button-submit" onclick="getDadosQuadra()">
+                  Registrar
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="quadrasCreate.js"></script>
+  </body>
+</html>
