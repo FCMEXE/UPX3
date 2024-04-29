@@ -6,18 +6,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const formData = new FormData(form);
 
-    
     const data = {
       tipoquadra: obterTiposTerrenoSelecionados(),
       numeroplayers: formData.get("numJogadores"),
       endeco: formData.get("endereco"),
-      superficie: "", 
+      superficie: "",
       nomequadra: formData.get("name"),
       precohora: formatarPrecoHora(formData.get("precoPorHora")),
       horariosdisponiveis: obterHorariosDisponiveisSelecionados(),
     };
 
- 
     fetch("https://6626eb22b625bf088c06e78f.mockapi.io/quadras", {
       method: "POST",
       headers: {
@@ -33,33 +31,36 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .then((responseData) => {
         console.log("Dados enviados com sucesso:", responseData);
-        
       })
       .catch((error) => {
         console.error("Erro ao enviar os dados:", error);
-       
       });
   });
 
- 
   function obterTiposTerrenoSelecionados() {
-    const checkboxes = document.querySelectorAll('input[name="terreno"]:checked');
-    const tiposTerrenoSelecionados = Array.from(checkboxes).map((checkbox) => checkbox.value);
+    const checkboxes = document.querySelectorAll(
+      'input[name="terreno"]:checked'
+    );
+    const tiposTerrenoSelecionados = Array.from(checkboxes).map(
+      (checkbox) => checkbox.value
+    );
     return tiposTerrenoSelecionados;
   }
 
-  
   function formatarPrecoHora(preco) {
-    return "R$ " + parseFloat(preco).toFixed(2); 
+    return "R$ " + parseFloat(preco).toFixed(2);
   }
 
   function obterHorariosDisponiveisSelecionados() {
-    const checkboxes = document.querySelectorAll('input[name="horarios"]:checked');
-    const horariosSelecionados = Array.from(checkboxes).map((checkbox) => checkbox.value);
+    const checkboxes = document.querySelectorAll(
+      'input[name="horarios"]:checked'
+    );
+    const horariosSelecionados = Array.from(checkboxes).map(
+      (checkbox) => checkbox.value
+    );
     return horariosSelecionados;
   }
 });
-
 
 function getInfo() {
   window.location.href = "MainSystem/Quadras/QuadraCreate/quadrasCreate.html";
