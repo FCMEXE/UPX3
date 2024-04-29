@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return response.json();
       })
       .then((responseData) => {
+        alert("Quadra Cadastrada")
         console.log("Dados enviados com sucesso:", responseData);
       })
       .catch((error) => {

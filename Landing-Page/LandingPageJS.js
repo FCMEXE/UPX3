@@ -21,7 +21,7 @@ btn.addEventListener("click", (event) => {
         
       } else {
         // User not found, handle accordingly
-        alert("Faz o Registro ai, Meu Chapa!")
+        alert("Senha ou Usuario Invalido!")
         
       }
     })

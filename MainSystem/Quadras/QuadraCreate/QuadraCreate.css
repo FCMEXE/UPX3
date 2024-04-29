@@ -1,0 +1,70 @@
+/* QuadraCreate.css */
+
+.container-right {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.inputForm {
+  margin-bottom: 20px;
+}
+
+.inputForm label {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.inputForm input[type="text"],
+.inputForm input[type="number"],
+.inputForm input[type="email"],
+.inputForm input[type="password"],
+.inputForm input[type="checkbox"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.inputForm input[type="checkbox"] {
+  width: auto;
+  margin-right: 5px;
+}
+
+.formBTN {
+  text-align: center;
+}
+
+.button-submit {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.button-submit:hover {
+  background-color: #0056b3;
+}
