@@ -6,15 +6,22 @@ btn.addEventListener("click", (event) => {
   event.preventDefault();
 
   const email = document.getElementById("email").value;
+  const senha = document.getElementById("password").value;
 
   fetch("https://66259991052332d553205bbc.mockapi.io/usuarios")
     .then((resposta) => resposta.json())
     .then((dados) => {
+  
       const usuarioEncontrado = dados.find(
         (usuario) => usuario.email === email
       );
 
-      if (usuarioEncontrado) {
+      const usuarioSenha = dados.find(
+        (usuario) => usuario.senha === senha
+      );
+      
+
+      if (usuarioEncontrado && usuarioSenha ) {
         console.log("foi essa buceta!")
         window.location.href = "../MainSystem/main.html";
        
