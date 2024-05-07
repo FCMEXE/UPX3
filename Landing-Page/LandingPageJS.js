@@ -22,7 +22,6 @@ btn.addEventListener("click", (event) => {
       
 
       if (usuarioEncontrado && usuarioSenha ) {
-        console.log("foi essa buceta!")
         window.location.href = "../MainSystem/main.html";
        
         

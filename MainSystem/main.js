@@ -1,53 +1,63 @@
-const body = document.querySelector("body"),
-  sidebar = body.querySelector("nav"),
-  toggle = body.querySelector(".toggle"),
-  searchBtn = body.querySelector(".search-box"),
-  modeText = body.querySelector(".mode-text");
-toggle.addEventListener("click", () => {
-  sidebar.classList.toggle("close");
+document.addEventListener("DOMContentLoaded", function () {
+  const body = document.body,
+    sidebar = document.querySelector(".sidebar"),
+    toggle = document.querySelector(".toggle"),
+    searchBtn = document.querySelector(".search-box");
+
+  toggle.addEventListener("click", () => {
+    sidebar.classList.toggle("close");
+  });
+
+  searchBtn.addEventListener("click", () => {
+    sidebar.classList.remove("close");
+  });
+
+  function renderizarConteudo(event) {
+    event.preventDefault();
+
+    const arquivoHTML = event.currentTarget.dataset.file;
+
+    fetch(arquivoHTML)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Erro ao carregar o arquivo HTML');
+        }
+        return response.text();
+      })
+      .then((html) => {
+        const secoes = ["home", "quadras", "lobbies", "agenda", "wallet", "proprietario", "logout"];
+        secoes.forEach((secao) => {
+          document.querySelector(`.${secao}`).innerHTML = html;
+        });
+      })
+      .catch((error) => console.error("Erro ao carregar o conteúdo:", error));
+  }
+
+  function carregarConteudoHome() {
+    const arquivoHome = "Home/home.html";
+
+    fetch(arquivoHome)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Erro ao carregar o arquivo HTML da Home');
+        }
+        return response.text();
+      })
+      .then((html) => {
+        document.querySelector(".home").innerHTML = html;
+      })
+      .catch((error) =>
+        console.error("Erro ao carregar o conteúdo da Home:", error)
+      );
+  }
+
+  carregarConteudoHome();
+
+  document.querySelectorAll(".nav-link").forEach((item) => {
+    item.addEventListener("click", renderizarConteudo);
+  });
 });
-searchBtn.addEventListener("click", () => {
-  sidebar.classList.remove("close");
-});
 
-function renderizarConteudo(event) {
-  // Previne o comportamento padrão do link
-  event.preventDefault();
 
-  const arquivoHTML = event.currentTarget.dataset.file;
 
-  fetch(arquivoHTML)
-    .then((response) => response.text())
-    .then((html) => {
-      document.querySelector(".home").innerHTML = html;
-      document.querySelector(".quadras").innerHTML = html;
-      document.querySelector(".lobbie").innerHTML = html;
-      document.querySelector(".agenda").innerHTML = html;
-      document.querySelector(".amigos").innerHTML = html;
-      document.querySelector(".wallet").innerHTML = html;
-      document.querySelector(".proprietario").innerHTML = html;
-      document.querySelector(".logout").innerHTML = html;
-    })
-    .catch((error) => console.error("Erro ao carregar o conteúdo:", error));
-}
 
-function carregarConteudoHome() {
-  const arquivoHome = "Home/home.html";
-
-  // Carrega e renderiza o conteúdo da página Home
-  fetch(arquivoHome)
-    .then((response) => response.text())
-    .then((html) => {
-      document.querySelector(".home").innerHTML = html;
-    })
-    .catch((error) =>
-      console.error("Erro ao carregar o conteúdo da Home:", error)
-    );
-}
-
-// Carrega o conteúdo da página Home ao iniciar a página
-carregarConteudoHome();
-
-document.querySelectorAll(".nav-link").forEach((item) => {
-  item.addEventListener("click", renderizarConteudo);
-});

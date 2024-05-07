@@ -47,7 +47,7 @@
               </a>
             </li>
 
-            <li class="nav-link"  data-file="Quadras/HTML/quadras.html">
+            <li class="nav-link" onclick="fetchCards();"  data-file="quadras.html">
               <a href="" >
                 <i class='bx bx-basketball icon'></i>
                 <span class="text nav-text">Quadras</span>
@@ -101,12 +101,56 @@
       </div>
     </nav>
 
-    <section class="home"></section>
+        <section class="home"></section>
+          <section class="cardsSec">
+            <div class="containerCard" id="containerCardId">         
+                
+            </div>
+        </section>
 
-    <script src="main.js"></script>
-    <script src="/MainSystem/LogOut/logOut.js"></script>
-     <script src="/MainSystem/Quadras/HTML/quadrasCreate.js"></script>
-     <script src="/MainSystem/Quadras/HTML/quadras.js"></script>
+        
+       
+        
+
+s
+  
+    
+    
+     
   
   </body>
+    <script src="main.js"></script>
+    <script src="/MainSystem/LogOut/logOut.js"></script>
+    <script>
+        function fetchCards() {
+            fetch('https://6626eb22b625bf088c06e78f.mockapi.io/quadras')
+            .then(response => response.json())
+            .then(data => {
+                const cardsContainer = document.getElementById("containerCardId");
+                cardsContainer.innerHTML = '';
+
+                data.forEach(quadra => {
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+                    
+                    card.innerHTML = `
+                        <div class="box" id="boxCard">
+                            <div class="content" id="contentCard">
+                                <h2>${quadra.id}</h2>
+                                <h3>${quadra.nomequadra}</h3>
+                                <p>Número de Players: ${quadra.numeroplayers}</p>
+                                <p>Preço por Hora: ${quadra.precohora}</p>
+                                <button class="btnCard" onclick="getInfo(${quadra.id})">Detalhes da quadra</button>
+                            </div>
+                        </div>
+                    `;
+                    cardsContainer.appendChild(card);
+                });
+            })
+            .catch(error => console.log("erro:", error))
+        }
+
+         // Chama a função para carregar os cartões quando a página carregar
+    </script>
+    
 </html>
