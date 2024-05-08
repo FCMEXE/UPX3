@@ -1,0 +1,47 @@
+/* Estilos para o container do formulário */
+.container-right {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para o formulário */
+.lobbie-form {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* Estilos para os títulos e parágrafos dentro do formulário */
+.lobbie-form h2,
+.lobbie-form p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+/* Estilos para o seletor de horário */
+.lobbie-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para o botão de enviar */
+.lobbie-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos para o botão de enviar quando hover */
+.lobbie-form button:hover {
+    background-color: #0056b3;
+}

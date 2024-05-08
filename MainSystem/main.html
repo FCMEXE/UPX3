@@ -11,6 +11,7 @@
       href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
       rel="stylesheet"
     />
+
   </head>
 
   <body>
@@ -47,14 +48,14 @@
               </a>
             </li>
 
-            <li class="nav-link" onclick="fetchCards();"  data-file="quadras.html">
-              <a href="" >
+            <li class="nav-link" onclick="fetchCards()"  data-file="quadras.html">
+              <a href="#" >
                 <i class='bx bx-basketball icon'></i>
                 <span class="text nav-text">Quadras</span>
               </a>
             </li>
 
-            <li class="nav-link"  data-file="Lobbies/HTML/lobbie.html">
+            <li class="nav-link"  data-file="lobbie.html">
               <a href="#">
                 <i class='bx bx-search-alt-2 icon'></i>
                 <span class="text nav-text">Lobbies </span>
@@ -103,21 +104,10 @@
 
         <section class="home"></section>
           <section class="cardsSec">
-            <div class="containerCard" id="containerCardId">         
-                
-            </div>
+            <div class="containerCard" id="containerCardId">     </div>
+             
         </section>
 
-        
-       
-        
-
-s
-  
-    
-    
-     
-  
   </body>
     <script src="main.js"></script>
     <script src="/MainSystem/LogOut/logOut.js"></script>
@@ -140,7 +130,9 @@ s
                                 <h3>${quadra.nomequadra}</h3>
                                 <p>Número de Players: ${quadra.numeroplayers}</p>
                                 <p>Preço por Hora: ${quadra.precohora}</p>
-                                <button class="btnCard" onclick="getInfo(${quadra.id})">Detalhes da quadra</button>
+                                <p>Tipo solo: ${quadra.tipoquadra}</p>
+
+                                <button class="btnCard" onclick="CreateLobbie(${quadra.id})">Criar Lobbie</button>
                             </div>
                         </div>
                     `;
@@ -148,9 +140,19 @@ s
                 });
             })
             .catch(error => console.log("erro:", error))
-        }
+        };
 
-         // Chama a função para carregar os cartões quando a página carregar
+
+        function CreateLobbie(quadraId) {
+          window.location.href = `LobbieCreate.html?quadraId=${quadraId}`;
+        }
+        
+
+
+       
+      
     </script>
+
+    
     
 </html>

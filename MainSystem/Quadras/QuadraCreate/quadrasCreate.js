@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function obterTiposTerrenoSelecionados() {
-    const checkboxes = document.querySelectorAll(
+    const checkboxes = document.querySelector(
       'input[name="terreno"]:checked'
     );
     const tiposTerrenoSelecionados = Array.from(checkboxes).map(
