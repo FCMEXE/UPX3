@@ -47,13 +47,13 @@ function redirectToProp() {
               throw new Error('Erro ao registrar proprietário');
             }
             
-            alert('Proprietário registrado com sucesso!');
+             Swal.fire('Sucesso!', 'Após a verificação iremos liberar seu token!', 'success');
           
           })
           .catch(error => {
             console.error('Erro:', error);
             
-            alert('Erro ao registrar proprietário. Por favor, tente novamente.');
+            Swal.fire('Erro!', 'Erro ao registrar proprietário. Por favor, tente novamente.', 'error');
           });
       });
     });

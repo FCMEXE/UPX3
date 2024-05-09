@@ -68,21 +68,12 @@
                 <span class="text nav-text"> Agenda</span>
               </a>
             </li>
-
-            
-
-            <li class="nav-link"  data-file="Wallet/wallet.html">
-              <a href="#">
-               <i class='bx bx-wallet icon' ></i>
-                <span class="text nav-text">Carteira</span>
-              </a>
-            </li>
           </ul>
         </div>
 
 
          <div class="bottom-content" >
-          <li class="nav-link"  data-file="Proprietario/proprietario.html">
+          <li class="nav-link"  onclick="tokenProp()"  data-file="Proprietario/proprietario.html">
             <a href="#">
               <i class='bx bx-store-alt icon'></i>
               <span class="text nav-text">Proprietário</span>
@@ -104,7 +95,8 @@
 
         <section class="home"></section>
           <section class="cardsSec">
-            <div class="containerCard" id="containerCardId">     </div>
+            <div class="containerCard" id="containerCardId"></div>
+            <div class="tokenModal"></div>
              
         </section>
 
@@ -146,7 +138,12 @@
         function CreateLobbie(quadraId) {
           window.location.href = `LobbieCreate.html?quadraId=${quadraId}`;
         }
-        
+
+        function tokenProp() {
+          window.location.href = "proprietarioToken.html"
+        }
+
+     
 
 
        
