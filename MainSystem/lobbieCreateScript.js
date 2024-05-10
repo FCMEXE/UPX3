@@ -49,10 +49,8 @@ function LobbieCard(quadraId) {
 }
 
 function reserveLobbie(quadraId, selectedTime) {
-    // Aqui você pode implementar a lógica para reservar o lobbie com o ID da quadra e o horário selecionado
-    console.log('Reservando lobbie...');
-    console.log('ID da Quadra:', quadraId);
-    console.log('Horário Selecionado:', selectedTime);
+    
+    
 }
 
 LobbieCard(quadraId);
