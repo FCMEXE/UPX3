@@ -25,10 +25,10 @@ function LobbieCard(quadraId) {
             form.classList.add('lobbie-form');
 
             form.innerHTML = `
-                   <h2>${data.nomequadra}</h2>
+                  <p>Digite o nome do lobbie:<input type="text" placeholder="aqui..."></p>
                 <p>Endereço: ${data.endeco}</p>
                 <p>Jogo: ${data.precohora}</p>
-                <p>Qtd. de jogadores: ${data.numeroplayers}</p>
+                <p>Qtd. de jogadores MAX: ${data.numeroplayers}</p>
                 <p>Escolha seu horario:</p>
                 <select name="horario">
                     ${data.horariosdisponiveis.map(horario => `<option value="${horario}">${horario}</option>`).join('')}
@@ -40,6 +40,11 @@ function LobbieCard(quadraId) {
             form.addEventListener('submit', function(event) {
                 event.preventDefault();
                 const selectedTime = form.querySelector('select[name="horario"]').value;
+                const reserva = {
+                    nome: form.querySelector('input[type="text"]').value,
+                    horario: selectedTime,
+                    quadraId: quadraId
+                };
 
                 
                

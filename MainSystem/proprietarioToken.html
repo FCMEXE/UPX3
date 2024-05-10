@@ -7,7 +7,7 @@
 </head>
 <body>
   <input placeholder="Coloque seu Token . . ." class="styled-input" type="text" />
-  <button>
+  <button id="btnToken">
   <div class="svg-wrapper-1">
     <div class="svg-wrapper">
       <svg
@@ -110,10 +110,21 @@ button:active {
 
   </style>
   <script>
-    
+    const btn =  document.getElementById('btnToken')
     const token = document.querySelector(".styled-input").value
+  
 
-    console.log(token)
+    btn.addEventListener('click', () => {
+      // fazer uma autentificação decente mas to com preguiça
+      if (token === 123) {
+        window.location.href = "/proprietarioLocation.html"
+      } else {
+        alert("Token inválido")
+        
+      }
+    })
+
+    
   </script>
 </body>
 </html>
