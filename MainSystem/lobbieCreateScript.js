@@ -40,7 +40,9 @@ function LobbieCard(quadraId) {
             form.addEventListener('submit', function(event) {
                 event.preventDefault();
                 const selectedTime = form.querySelector('select[name="horario"]').value;
-                reserveLobbie(quadraId, selectedTime);
+
+                
+               
             });
 
             containerRight.appendChild(form);
@@ -48,10 +50,7 @@ function LobbieCard(quadraId) {
         .catch(error => console.error('Erro:', error));
 }
 
-function reserveLobbie(quadraId, selectedTime) {
-    
-    
-}
+
 
 LobbieCard(quadraId);
 
