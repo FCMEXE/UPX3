@@ -66,3 +66,92 @@ document.addEventListener("DOMContentLoaded", function () {
 function getInfo() {
   window.location.href = "MainSystem/Quadras/QuadraCreate/quadrasCreate.html";
 }
+
+const courtDataForm = document.getElementById('courtDataForm');
+const submitCourtDataButton = document.getElementById('submitCourtDataButton');
+const imageUploadForm = document.getElementById('imageUploadForm');
+
+const courtForm = document.getElementById('courtForm');
+const submitButton = document.querySelector('form button');
+
+
+submitButton.addEventListener('click', handleCourtDataAndImageUpload);
+
+const mongoose = require('mongoose');
+const fs = require('fs'); 
+
+const uri = 'mongodb+srv://lucasjesuss2004:QuadraConecta@quadraconecta.aiaaw5y.mongodb.net/?retryWrites=true&w=majority&appName=QuadraConecta'; 
+
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Connected to MongoDB Atlas!'))
+  .catch(err => console.error('Error connecting:', err));
+
+
+
+  const mongoose = require('mongoose');
+const fs = require('fs'); 
+
+async function handleCourtDataAndImageUpload(event) {
+  event.preventDefault(); 
+
+  const courtData = {
+    tipoquadra: document.getElementById('tipoquadraInput').value,
+   
+  };
+
+  const selectedFile = document.getElementById('imageInput').files[0];
+
+  if (selectedFile) {
+    try {
+      
+      await submitCourtDataToOtherDB(courtData);
+
+      
+      await connectToMongoDB();
+
+     
+      const Court = await createCourtSchema();
+
+      
+      const newCourt = new Court({
+        imagemQuadra: {
+          data: null, 
+          contentType: null 
+        },
+        
+      });
+
+      
+      await newCourt.save();
+      const savedCourtId = newCourt._id;
+
+     
+      const imageData = fs.readFileSync(selectedFile);
+
+     
+      const updatedCourt = await Court.findByIdAndUpdate(
+        savedCourtId,
+        { $set: { imagemQuadra: { data: imageData, contentType: selectedFile.mimetype } } },
+        { new: true } 
+      );
+
+      console.log('Quadra adicionada e imagem carregada com sucesso!');
+    } catch (error) {
+      console.error('Error adding court and uploading image:', error);
+    } finally {
+      
+      await mongoose.connection.close();
+    }
+  } else {
+    console.error('No image selected.');
+  }
+}
+
+
+module.exports = {
+  handleCourtDataAndImageUpload
+};
+
+
+mongoose.connection.close();
+
