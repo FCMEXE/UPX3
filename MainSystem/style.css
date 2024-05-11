@@ -313,7 +313,7 @@ body.dark .home .text {
   width: 100%;
   height: 300px;
 
-  background-color: red;
+  background-color: rgb(255, 255, 255);
 }
 
 .card.text {
