@@ -157,21 +157,20 @@
                 const cardsContainer = document.getElementById("containerLobbiesId");
                 cardsContainer.innerHTML = '';
 
-                data.forEach(quadra => {
+                data.forEach(lobbies => {
                     const card = document.createElement('div');
                     card.classList.add('card');
                     
                     card.innerHTML = `
                         <div class="box">
               <div class="content">
-                <h2>01</h2>
-                <h3>Card One</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore, totam velit? Iure nemo labore inventore?
+                <h2>${lobbies.id}</h2>
+                <h3>${lobbies.nome}</h3>
+                <p> seu lobbie foi marcado para
+                 ${lobbies.horario}, caso mais duvidas acesse a agenda!
                 </p>
                 <button class="btnCard" ">
-                  Detalhes da minha pika
+                  Acessar
                 </button>
               </div>
             </div>
