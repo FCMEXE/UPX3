@@ -1,5 +1,11 @@
-let btn = document.getElementById("yes");
 document.getElementById("yes").addEventListener("click", function () {
+  
+  localStorage.removeItem('email');
+  localStorage.removeItem('senha');
+  
+  window.location.href = "/Landing-Page/index.html";
+  
+ 
   alert("Você foi desconectado!");
 });
 

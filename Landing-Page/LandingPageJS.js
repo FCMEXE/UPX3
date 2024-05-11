@@ -36,7 +36,9 @@ btn.addEventListener("click", (event) => {
     });
 });
 
+let email = {nome: 'Matheus', idade: 29}
 
+localStorage.setItem('email', JSON.stringify(email));
  
 
 

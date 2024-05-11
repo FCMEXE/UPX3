@@ -12,9 +12,30 @@
       <div class="container">
         <h2>Confirmação de Logout</h2>
         <p>Você tem certeza que deseja sair do sistema?</p>
-        <button id="yes">Sim</button>
-        <button id="cancel">Cancelar</button>
+        <button id="yes" onclick="rediricionaNego()">Sim</button>
+        <button id="cancel" onclick="redirecionaBranco()">Cancelar</button>
       </div>
     </section>
   </body>
+ 
+  <script src="/MainSystem/main.js"></script>
+  <script>
+
+function rediricionaNego() {
+  document.getElementById("yes").addEventListener("click", function () {
+    localStorage.removeItem('email');
+    localStorage.removeItem('senha');
+    window.open ("../../Landing-Page/index.html");
+    alert("Você foi desconectado!");
+  });
+
+  function redirecionaBranco(){
+  document.getElementById("cancel").addEventListener("click", function () {
+    window.history.back();
+     window.open("../../Home/home.html");
+  });
+}
+}
+
+  </script>
 </html>

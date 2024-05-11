@@ -59,6 +59,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+let emailObj = JSON.parse(emailString);
+console.log(emailObj.nome);
+
+function rediricionaNego() {
+  document.getElementById("yes").addEventListener("click", function () {
+    localStorage.removeItem('email');
+    localStorage.removeItem('senha');
+    window.location.href = "../../Landing-Page/index.html";
+    alert("Você foi desconectado!");
+  });
+
+  function redirecionaBranco(){
+    document.getElementById("cancel").addEventListener("click", function () {
+      window.history.back();
+       window.open("../../Home/home.html");
+    });
+  }
+}
+
  
 
 

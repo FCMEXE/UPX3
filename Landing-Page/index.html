@@ -242,4 +242,23 @@
     </main>
     <script src="LandingPageJS.js"></script>
   </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const btn = document.getElementById("btn-form");
+
+      btn.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const senha = document.getElementById("password").value;
+
+        // Armazenar email e senha no localStorage
+        localStorage.setItem('email', email);
+        localStorage.setItem('senha', senha);
+
+        // Seu código de autenticação aqui
+        // ...
+      });
+    });
+  </script>
 </html>
