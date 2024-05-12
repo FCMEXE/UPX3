@@ -1,62 +1,90 @@
-const body = document.querySelector("body"),
-  sidebar = body.querySelector("nav"),
-  toggle = body.querySelector(".toggle"),
-  searchBtn = body.querySelector(".search-box"),
-  modeSwitch = body.querySelector(".toggle-switch"),
-  modeText = body.querySelector(".mode-text");
-toggle.addEventListener("click", () => {
-  sidebar.classList.toggle("close");
-});
-searchBtn.addEventListener("click", () => {
-  sidebar.classList.remove("close");
-});
-modeSwitch.addEventListener("click", () => {
-  body.classList.toggle("dark");
-  if (body.classList.contains("dark")) {
-    modeText.innerText = "Light";
-  } else {
-    modeText.innerText = "Dark";
+document.addEventListener("DOMContentLoaded", function () {
+  const body = document.body,
+    sidebar = document.querySelector(".sidebar"),
+    toggle = document.querySelector(".toggle"),
+    searchBtn = document.querySelector(".search-box");
+
+  toggle.addEventListener("click", () => {
+    sidebar.classList.toggle("close");
+  });
+
+  searchBtn.addEventListener("click", () => {
+    sidebar.classList.remove("close");
+  });
+
+  function renderizarConteudo(event) {
+    event.preventDefault();
+
+    const arquivoHTML = event.currentTarget.dataset.file;
+
+    fetch(arquivoHTML)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Erro ao carregar o arquivo HTML");
+        }
+        return response.text();
+      })
+      .then((html) => {
+        const secoes = [
+          "home",
+          "quadras",
+          "lobbies",
+          "agenda",
+          "wallet",
+          "proprietario",
+          "logout",
+        ];
+        secoes.forEach((secao) => {
+          document.querySelector(`.${secao}`).innerHTML = html;
+        });
+      })
+      .catch((error) => console.error("Erro ao carregar o conteúdo:", error));
   }
+
+  function carregarConteudoHome() {
+    const arquivoHome = "Home/home.html";
+
+    fetch(arquivoHome)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Erro ao carregar o arquivo HTML da Home");
+        }
+        return response.text();
+      })
+      .then((html) => {
+        document.querySelector(".home").innerHTML = html;
+      })
+      .catch((error) =>
+        console.error("Erro ao carregar o conteúdo da Home:", error)
+      );
+  }
+
+  carregarConteudoHome();
+
+  document.querySelectorAll(".nav-link").forEach((item) => {
+    item.addEventListener("click", renderizarConteudo);
+  });
 });
 
-function renderizarConteudo(event) {
-  // Previne o comportamento padrão do link
-  event.preventDefault();
-
-  const arquivoHTML = event.currentTarget.dataset.file;
-
-  fetch(arquivoHTML)
-    .then((response) => response.text())
-    .then((html) => {
-      document.querySelector(".home").innerHTML = html;
-      document.querySelector(".quadras").innerHTML = html;
-      document.querySelector(".lobbie").innerHTML = html;
-      document.querySelector(".agenda").innerHTML = html;
-      document.querySelector(".amigos").innerHTML = html;
-      document.querySelector(".wallet").innerHTML = html;
-      document.querySelector(".proprietario").innerHTML = html;
-      document.querySelector(".logout").innerHTML = html;
-    })
-    .catch((error) => console.error("Erro ao carregar o conteúdo:", error));
+//REDIRECIONA O USUARIO PARA A PAGINA DE SUPORTE (BOTAO LOCALIZADO NA PAGINA DE QUADRAS)
+function redirectToSup() {
+  window.open("../Landing-Page/LandingSup/suporte.html");
 }
 
-function carregarConteudoHome() {
-  const arquivoHome = "Home/home.html";
+// FUNÇÃO PARA PESQUISAR AS QUADRAS
+const search = () => { // criação da ArrowFunction
+  const searchBox = document.getElementById("pesquisa").value.toUpperCase(); //pega as informações que o usuário digitou e transforma em maiúsculo
+  const storeQuadras = document.getElementById("containerCardId"); 
+  const quadras = document.querySelectorAll(".card"); 
 
-  // Carrega e renderiza o conteúdo da página Home
-  fetch(arquivoHome)
-    .then((response) => response.text())
-    .then((html) => {
-      document.querySelector(".home").innerHTML = html;
-    })
-    .catch((error) =>
-      console.error("Erro ao carregar o conteúdo da Home:", error)
-    );
-}
+  quadras.forEach(quadra => { // roda um loop para todas as quadras e pega o nome das quadras e transforma em maiúsculo
+    const nomeQuadra = quadra.querySelector("h3").textContent.toUpperCase();
 
-// Carrega o conteúdo da página Home ao iniciar a página
-carregarConteudoHome();
-
-document.querySelectorAll(".nav-link").forEach((item) => {
-  item.addEventListener("click", renderizarConteudo);
-});
+    if (nomeQuadra.includes(searchBox)) { // verifica se as informações fornecidas pelo usuário batem com os nomes das quadras
+      quadra.style.display = ""; //se sim, mostra as quadras correspondentes
+    } 
+    else {
+      quadra.style.display = "none"; //se não, esconde as quadras não correspondentes
+    }
+  });
+};

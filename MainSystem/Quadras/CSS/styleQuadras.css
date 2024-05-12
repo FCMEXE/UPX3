@@ -74,6 +74,7 @@
 }
 
 .QuadraContainer .searchBar {
+  width: 500px;
   margin-top: 10px;
   padding: 1.3em 3em;
   font-size: 15px;
@@ -86,11 +87,12 @@
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: normal;
+  transition: all 0.3s ease 0s;
 }
 .QuadraContainer .searchBar:hover {
-  border: solid 3px #ff7575;
-  transition: all 0.3s ease 0s;
+  border: solid 3px #695cfe;
   background-color: #ffffff;
+  width: 240px;
 }
 .QuadraContainer input[class="searchBar"]::placeholder {
   letter-spacing: 6.5px;
