@@ -78,15 +78,35 @@ function rediricionaNego() {
   }
 }
 
+async function gerarHorarios() {
+  const userId = localStorage.getItem('userID');
+  const urlLobbie = `https://66416a533d66a67b3433d202.mockapi.io/lobbie/userLobbies/?userid=${userId}`;
+  const resposta = await fetch(urlLobbie);
+  const resultado = await resposta.json();
 
-      
-    
+  const diasSemana = ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado', 'domingo'];
+  const horarios = [
+      "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00",
+      "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"
+  ]
 
- 
+  const tabela = document.getElementById('tableId');
 
+  resultado.forEach(agenda => {
+      const diaSemana = agenda.diaSemana;
+      const horario = agenda.horario;
+      const nome = agenda.nome;
 
+      const indexDia = diasSemana.indexOf(diaSemana) + 1;
+      const indexHorario = horarios.indexOf(horario) + 1;
 
+      if (indexDia > 0 && indexDia < tabela.rows.length && indexHorario > 0) {
+          // Preencher a célula correspondente com o nome do lobbie
+          const horarioCell = tabela.rows[indexHorario].cells[indexDia];
+          horarioCell.textContent = nome;
+          horarioCell.style.backgroundColor = 'forestgreen';
+      }
+  });
+}
 
-
-
-
+gerarHorarios();
