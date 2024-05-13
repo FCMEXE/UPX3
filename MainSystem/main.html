@@ -94,6 +94,7 @@
             <div class="containerCard" id="containerCardId"></div>
             <div class="containerCard" id="containerLobbiesId"></div>
             <div class="tokenModal"></div>
+             <div class="cardQuadras-content" id="myLobbies"></div>
              
         </section>
 
@@ -176,7 +177,51 @@
             .catch(error => console.log("erro:", error))
         }
 
+                // Obtém o ID do usuário do localStorage
+const userId = localStorage.getItem('userID');
+
+// Função para obter todos os lobbies do usuário
+function getLobbiesByUserId(userId) {
+    fetch(`https://662902a454afcabd0737da4c.mockapi.io/Lobbies?userid=${userId}`)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data)
+
+            const myLobbies = document.getElementById("myLobbies");
+            myLobbies.innerHTML = '';
+
+            data.forEach(lobbies => {
+              const cardLobbie = document.createElement("div")
+              cardLobbie.classList.add("cardQuadras-content")
+
+            cardLobbie.innerHTML =  `
+             <div class="card" ">
+            <div class="card-details">
+          <p class="text-title">${lobbies.nome}</p>
+          <p class="text-body">${lobbies.horario}</p>
+          <p class="text-body">${lobbies.numerodeplayers}</p>
+          </div>
+          <button class="card-button" >${lobbies.id}</button>
+      </div>`;
+      myLobbies.appendChild(cardLobbie)
+            })
+
+
+
+           
+            })
+            .catch(error => console.log("erro:", error))
+        }
+           
+      
         
+       
+
+
+// Chama a função para obter os lobbies do usuário
+getLobbiesByUserId(userId);
+
+       
      
 
 
