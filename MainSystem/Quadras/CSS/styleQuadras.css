@@ -85,18 +85,20 @@ body {
   border-radius: 45px;
   outline: none;
   font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease 0s;
   font-weight: 600;
   font-style: normal;
+  width: 500px;
 }
 .QuadraContainer .searchBar:hover {
   border: solid 3px #695cfe;
-  transition: all 0.3s ease 0s;
   background-color: #ffffff;
+  width: 240px;
 }
 .QuadraContainer input[class="searchBar"]::placeholder {
   letter-spacing: 6.5px;
   font-weight: 500;
-  color: rgba(59, 59, 59, 0.918);
+  color: rgba(59, 59, 59, 0.918);
 }
 
 .cardsSec {

@@ -16,14 +16,11 @@
                 <div class="container">
                     <div class="nav-links">
                         <ul>
-                            <form method="get" action="">
-                                <input type="text" name="pesquisa" id="pesquisa" class="searchBar" placeholder=" Pesquisar..." required />
+                            <form>
+                                <input onkeyup="search()" type="text" name="pesquisa" id="pesquisa" class="searchBar" placeholder=" Pesquisar Nome da Quadra"/>
                             </form>
                             <button class="navBtn" onclick="redirectToLand()">Filtros</button>
                             <button class="navBtn" onclick="redirectToSup()">suporte</button>
-                            <button class="navBtn" ><a href="./Quadras/QuadraCreate/quadrasCreate.html">Quadra</a> </button>
-
-                            
                         </ul>
                     </div>
                 </div>
@@ -36,39 +33,6 @@
         </section>
     </section>
 
-    <script>
-        function fetchCards() {
-            fetch('https://6626eb22b625bf088c06e78f.mockapi.io/quadras')
-            .then(response => response.json())
-            .then(data => {
-                const cardsContainer = document.getElementById("containerCardId");
-                cardsContainer.innerHTML = '';
-
-                data.forEach(quadra => {
-                    const card = document.createElement('div');
-                    card.classList.add('card');
-                    
-                    card.innerHTML = `
-                        <div class="box" id="boxCard">
-                            <div class="content" id="contentCard">
-                                <h2>${quadra.id}</h2>
-                                <h3>${quadra.nomequadra}</h3>
-                                <p>Número de Players: ${quadra.numeroplayers}</p>
-                                <p>Preço por Hora: ${quadra.precohora}</p>
-                                 <p>Tipo Solo: </p>
-                                <button class="btnCard" onclick="getInfo(${quadra.id})">Detalhes da quadra</button>
-                            </div>
-                        </div>
-                    `;
-                    cardsContainer.appendChild(card);
-                });
-            })
-            .catch(error => console.log("erro:", error))
-        }
-
-       
-        
-    </script>
-  
+    <script src="/MainSystem/main.js"></script>
 </body>
 </html>
