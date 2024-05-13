@@ -466,3 +466,8 @@ td {
 .agenda th:first-child {
   width: 100px; /* Largura da coluna do horário */
 }
+
+.img {
+  border-radius: 40px;
+}
+

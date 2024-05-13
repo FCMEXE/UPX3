@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quadras - QuadraConecta</title>
 
     <link rel="stylesheet" href="style.css" />
 
@@ -88,13 +89,17 @@
       </div>
     </nav>
 
-        <section class="home"></section>
+        <section class="home">
+          
+          
+        </section>
         
           <section class="cardsSec">
             <div class="containerCard" id="containerCardId"></div>
             <div class="containerCard" id="containerLobbiesId"></div>
             <div class="tokenModal"></div>
-         
+             <div class="cardQuadras-content" id="myLobbies"></div>
+            
              
         </section>
 
@@ -177,47 +182,48 @@
             .catch(error => console.log("erro:", error))
         }
 
-         const userId = localStorage.getItem('userID');
+                // Obtém o ID do usuário do localStorage
+const userId = localStorage.getItem('userID');
 
-        function getLobbiesByUserId(userId) {
-    fetch(`https://662902a454afcabd0737da4c.mockapi.io/Lobbies?userid=${userId}`)
-        .then(response => response.json())
-        .then(data => {
-          console.log(data)
-
-            const myLobbies = document.getElementById("myLobbies");
-            myLobbies.innerHTML = '';
-
-            data.forEach(lobbies => {
-              const cardLobbie = document.createElement("div")
-              cardLobbie.classList.add("cardQuadras-content")
-
-            cardLobbie.innerHTML =  `
-             <div class="card" ">
-            <div class="card-details">
-          <p class="text-title">${lobbies.nome}</p>
-          <p class="text-body">${lobbies.horario}</p>
-          <p class="text-body">${lobbies.numerodeplayers}</p>
-          </div>
-          <button class="card-button" >${lobbies.id}</button>
-      </div>`;
-      myLobbies.appendChild(cardLobbie)
-            })
-
-
-
-           
-            })
-            .catch(error => console.log("erro:", error))
-        }
-           
+// Função para obter todos os lobbies do usuário
+function getLobbiesByUserId(userId) {
+  fetch(`https://66416a533d66a67b3433d202.mockapi.io/lobbie/userLobbies?userid=${userId}`)
+    .then(response => response.json())
+    .then(data => {
       
-        
-       
 
+      // Inverte a ordem do array
+      const reversedData = data.slice().reverse();
+
+      // Seleciona apenas os três primeiros elementos
+      const lastThreeLobbies = reversedData.slice(0, 3);
+
+      const myLobbies = document.getElementById("myLobbies");
+      myLobbies.innerHTML = '';
+
+      lastThreeLobbies.forEach(lobbies => {
+        const cardLobbie = document.createElement("div");
+        cardLobbie.classList.add("cardQuadras-content");
+
+        cardLobbie.innerHTML = `
+          <div class="card">
+            <div class="card-details">
+              <p class="text-title">${lobbies.nome}</p>
+              <p class="text-body">Horario:${lobbies.horario}</p>
+              <p class="text-body">Numero de players(Max):${lobbies.numerodeplayers}</p>
+            </div>
+            <button class="card-button">${lobbies.id}</button>
+          </div>`;
+        myLobbies.appendChild(cardLobbie);
+      });
+    })
+    .catch(error => console.log("erro:", error));
+}
 
 // Chama a função para obter os lobbies do usuário
 getLobbiesByUserId(userId);
+
+
 
     </script>
 
