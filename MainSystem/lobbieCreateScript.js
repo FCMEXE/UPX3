@@ -27,6 +27,16 @@ function LobbieCard(quadraId) {
                 <p>Endereço: ${data.endeco}</p>
                 <p>Jogo: ${data.precohora}</p>
                 <p>Qtd. de jogadores MAX: ${data.numeroplayers}</p>
+                <p>Escolha o dia da semana:</p>
+                <select id="diaSemana" name="diaSemana">
+                    <option value="domingo">Domingo</option>
+                    <option value="segunda">Segunda</option>
+                    <option value="terca">Terça</option>
+                    <option value="quarta">Quarta</option>
+                    <option value="quinta">Quinta</option>
+                    <option value="sexta">Sexta</option>
+                    <option value="sabad">Sábado</option>
+                </select>
                 <p>Escolha seu horário:</p>
                 <select id="horario" name="horario">
                     ${data.horariosdisponiveis.map(horario => `<option value="${horario}">${horario}</option>`).join('')}
@@ -41,17 +51,18 @@ function LobbieCard(quadraId) {
                 event.preventDefault();
 
                 const nome = document.getElementById('nomeLobbie').value;
+                const diaSemana = document.getElementById('diaSemana').value;
                 const horario = document.getElementById('horario').value;
 
                 const reserva = {
                     nome: nome,
+                    diaSemana: diaSemana,
                     horario: horario,
                     quadraId: quadraId,
                     userid: userId 
-                  
                 };
 
-                fetch('https://662902a454afcabd0737da4c.mockapi.io/Lobbies', {
+                fetch('https://66416a533d66a67b3433d202.mockapi.io/lobbie/userLobbies', {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
