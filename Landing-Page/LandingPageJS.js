@@ -1,5 +1,3 @@
-
-
 const btn = document.getElementById("btn-form");
 
 btn.addEventListener("click", (event) => {
@@ -11,71 +9,29 @@ btn.addEventListener("click", (event) => {
   fetch("https://66259991052332d553205bbc.mockapi.io/usuarios")
     .then((resposta) => resposta.json())
     .then((dados) => {
-  
+
       const usuarioEncontrado = dados.find(
-        (usuario) => usuario.email === email
+        (usuario) => usuario.email === email && usuario.senha === senha
       );
 
-      const usuarioSenha = dados.find(
-        (usuario) => usuario.senha === senha
-      );
-      
-
-      if (usuarioEncontrado && usuarioSenha ) {
+      if (usuarioEncontrado) {
+        // Armazena o ID do usuário no localStorage
+        localStorage.setItem('userID', usuarioEncontrado.id);
+        
+        // Redireciona para a página principal
         window.location.href = "../MainSystem/main.html";
-       
         
       } else {
-        // User not found, handle accordingly
-        alert("Senha ou Usuario Invalido!")
-        
+        // Usuário não encontrado ou senha incorreta
+        alert("Senha ou Usuário Inválido!");
       }
     })
     .catch((error) => {
-       alert("Erro ao encontrar ")
+       alert("Erro ao encontrar usuário");
     });
 });
 
-let email = {nome: 'Matheus', idade: 29}
-
-localStorage.setItem('email', JSON.stringify(email));
- 
-
-
-  
-
-
-//   //recebe os proprietários da API
-//   const proprietarioResponse = fetch(
-//     "https://66259991052332d553205bbc.mockapi.io/proprietarios"
-//   );
-//   const dadosProprietarios = proprietarioResponse.json();
-
-//   const proprietarioEncontrado = dadosProprietarios.find(
-//     (proprietario) => proprietario.email === email
-//   );
-
-//   //verifica se o usuário foi encontrado
-//   if (usuarioEncontrado) {
-//     if (usuarioEncontrado.senha === senha) {
-//       alert("Login realizado com sucesso!");
-//       window.location.href = "../MainSystem/main.html";
-//     } else {
-//       alert("Senha incorreta!");
-//     }
-//   } else if (proprietarioEncontrado) {
-//     //verifica se o proprietário foi encontrado
-//     if (proprietarioEncontrado.senha === senha) {
-//       alert("Login realizado com sucesso!");
-//       window.location.href = "../MainSystem/main.html";
-//     } else {
-//       alert("Senha incorreta!");
-//     }
-//   } else {
-//     alert("E-mail não cadastrado!");
-//   }
-// });
-
+// Outras funções que você tem
 function scrollToSuporte() {
   var suporteSection = document.querySelector(".Suporte");
   suporteSection.scrollIntoView({ behavior: "smooth" });
@@ -94,4 +50,3 @@ function scrollToSignUp() {
 function redirectToIndex() {
   window.location.href = "./LandingSup/suporte.html";
 }
-

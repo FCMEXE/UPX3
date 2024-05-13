@@ -10,6 +10,7 @@ function GetIdUrl(name, url) {
 
 // Obtém o valor do parâmetro "quadraId" da URL
 const quadraId = GetIdUrl('quadraId');
+const userId = localStorage.getItem('userID');
 
 function LobbieCard(quadraId) {
     fetch(`https://6626eb22b625bf088c06e78f.mockapi.io/quadras/${quadraId}`)
@@ -45,7 +46,9 @@ function LobbieCard(quadraId) {
                 const reserva = {
                     nome: nome,
                     horario: horario,
-                    quadraId: quadraId
+                    quadraId: quadraId,
+                    userid: userId 
+                  
                 };
 
                 fetch('https://662902a454afcabd0737da4c.mockapi.io/Lobbies', {
@@ -73,4 +76,4 @@ function LobbieCard(quadraId) {
         .catch(error => console.error('Erro:', error));
 }
 
-LobbieCard(quadraId);
+LobbieCard(quadraId,userId);
