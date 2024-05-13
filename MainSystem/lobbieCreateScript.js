@@ -42,7 +42,7 @@ function LobbieCard(quadraId) {
                     ${data.horariosdisponiveis.map(horario => `<option value="${horario}">${horario}</option>`).join('')}
                 </select>
 
-                <button type="submit">Reservar Lobbie</button>
+                <button type="submit" >Reservar Lobbie</button>
             `;
             containerRight.appendChild(form);
 
@@ -86,5 +86,7 @@ function LobbieCard(quadraId) {
         })
         .catch(error => console.error('Erro:', error));
 }
+
+
 
 LobbieCard(quadraId,userId);

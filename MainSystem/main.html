@@ -152,7 +152,7 @@
           
 
           function fetchLobbies() {
-            fetch('https://662902a454afcabd0737da4c.mockapi.io/Lobbies')
+            fetch('https://66416a533d66a67b3433d202.mockapi.io/lobbie/userLobbies')
             .then(response => response.json())
             .then(data => {
                 const cardsContainer = document.getElementById("containerLobbiesId");
@@ -170,9 +170,7 @@
                 <p> seu lobbie foi marcado para
                  ${lobbies.horario}, caso mais duvidas acesse a agenda!
                 </p>
-                <button class="btnCard" ">
-                  Acessar
-                </button>
+                
               </div>
             </div>
                     `;
@@ -222,6 +220,40 @@ function getLobbiesByUserId(userId) {
 
 // Chama a função para obter os lobbies do usuário
 getLobbiesByUserId(userId);
+
+    function gerarHorarios() {
+        const userId = localStorage.getItem('userID');
+        const url = `https://66416a533d66a67b3433d202.mockapi.io/lobbie/userLobbies/?userid=${userId}`;
+        const resposta =  fetch(url);
+        const resultado =  resposta.json();
+
+        // Preencher a tabela com os horários
+        const diasSemana = ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado', 'domingo'];
+        const horarios = [
+            "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00",
+            "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"
+        ]
+
+        const tabela = document.getElementById('tableId');
+
+        resultado.forEach(agenda => {
+            const diaSemana = agenda.diaSemana;
+            const horario = agenda.horario;
+            const nome = agenda.nome;
+
+            const indexDia = diasSemana.indexOf(diaSemana) + 1;
+            const indexHorario = horarios.indexOf(horario) + 1;
+
+            if (indexDia > 0 && indexDia < tabela.rows.length && indexHorario > 0) {
+                // Preencher a célula correspondente com 'Agendado'
+                const horarioCell = tabela.rows[indexHorario].cells[indexDia];
+                horarioCell.textContent = nome;
+                horarioCell.style.backgroundColor = 'forestgreen';
+            }
+        });
+    }
+
+    gerarHorarios();
 
 
 
