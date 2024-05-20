@@ -1,22 +1,24 @@
 <div class="cardContainerProp" id="quadrasButton">
   <div class="cardProp">
     <h1>Criar Quadras</h1>
-    <p>eleniti laboriosam maxime numquam quam dolorem dignissimos! At rerum placeat neque cumque officiis, quibusdam expedita.</p>
+    <p> Criar Quadras, passando todos os dados correspondentes a mesma(nome,horario...).</p>
     
    <button onclick="createQuadra()">Criar</button>
   </div>
 
   <div class="cardProp">
-    <h1>Gerenciar Quadras</h1>
+    <h1>Deletar Quadras</h1>
+    <p> Deletar Quadra caso não seja mais utilizada ou tenha dado algum problema.</p>
+
     <button onclick="promptDeleteQuadra()">Excluir Quadras</button>
   </div>
 
   <div class="cardProp">
-     <h1>Gerenciar Lobbies</h1>
-         <p>eleniti laboriosam maxime numquam quam dolorem dignissimos! At rerum placeat neque cumque officiis, quibusdam expedita.</p>
+     <h1>Excluir Lobbies</h1>
+    <p> Deletar Lobbie caso não seja mais utilizada ou tenha dado algum problema.</p>
 
 
-     <button onclick="createQuadra()">Gerenciar Lobbies</button>
+     <button onclick="createQuadra()">Excluir Lobbies</button>
   </div>
  
 </div>
@@ -63,6 +65,10 @@ border-radius: 20px;
   margin-top: 30px;
 }
 
+.cardProp p {
+
+text-align: center;
+}
 
 .cardProp:hover {
  border-bottom-right-radius: 50px;
