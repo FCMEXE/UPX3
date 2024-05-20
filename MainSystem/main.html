@@ -284,14 +284,14 @@ async function promptDeleteLobbie() {
 
 async function deleteLobbie(nomeLobbie) {
   try {
-    const response = await fetch(apiUrlLobbie); // Fetching the data
+    const response = await fetch(apiUrlLobbie);
     const lobbies = await response.json();
 
     // Logging the response for debugging purposes
     console.log('Lobbies:', lobbies);
 
     // Finding the lobbie to delete
-    const lobbieToDelete = lobbies.find(lobbie => lobbie.nomeLobbie === nome);
+    const lobbieToDelete = lobbies.find(lobbie => lobbie.nome === nomeLobbie);
 
     // Logging the result of the find operation
     console.log('Lobbie to Delete:', lobbieToDelete);
