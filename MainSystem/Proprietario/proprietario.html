@@ -1,1 +1,65 @@
-<h1>proprietario</h1>
+<div class="cardContainerProp" id="quadrasButton">
+  <div class="cardProp">
+    <h1>Criar Quadras</h1>
+    
+   <button onclick="createQuadra()">Criar</button>
+  </div>
+
+  <div class="cardProp">
+    <h1>Gerenciar Quadras</h1>
+  </div>
+
+  <div class="cardProp">
+     <h1>Gerenciar Lobbies</h1>
+  </div>
+</div>
+
+
+
+<style>
+  .cardContainerProp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;         
+  }
+  .cardContainerProp h1 {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+  }
+  .cardProp {
+ width: 200px;
+ height: 260px;
+ margin-right: 100px;
+ background-color: #ffffff;
+ box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+ transition: border-radius cubic-bezier(0.075, 0.82, 0.165, 1) 1s,
+              transform cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+
+ .cardProp button {
+  display: flex;
+    align-items: center;
+    justify-content: center; 
+ 
+}
+.cardProp:hover {
+ border-bottom-right-radius: 50px;
+ border-top-left-radius: 50px;
+ transform: scale(1.05);
+}
+
+</style>
+
+<script>
+
+  
+</script>

@@ -7,6 +7,11 @@ function GetIdUrl(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+function returnHome(paams) {
+    window.location.href = ("./main.html")
+}
+
+
 
 // Obtém o valor do parâmetro "quadraId" da URL
 const quadraId = GetIdUrl('quadraId');
@@ -42,7 +47,10 @@ function LobbieCard(quadraId) {
                     ${data.horariosdisponiveis.map(horario => `<option value="${horario}">${horario}</option>`).join('')}
                 </select>
 
-                <button type="submit" >Reservar Lobbie</button>
+                <button type="submit" onclick="returnHome()" >Reservar Lobbie</button>
+             
+
+                
             `;
             containerRight.appendChild(form);
 
@@ -90,3 +98,5 @@ function LobbieCard(quadraId) {
 
 
 LobbieCard(quadraId,userId);
+
+

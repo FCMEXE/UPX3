@@ -90,7 +90,7 @@ function redirectToSup() {
   window.open("../Landing-Page/LandingSup/suporte.html");
 }
 
-// FUNÇÃO PARA PESQUISAR AS QUADRAS
+  // FUNÇÃO PARA PESQUISAR AS QUADRAS
 function search () { // criação da ArrowFunction
   const searchBox = document.getElementById("pesquisa").value.toUpperCase(); //pega as informações que o usuário digitou e transforma em maiúsculo
   const storeQuadras = document.getElementById("containerCardId");
@@ -108,35 +108,25 @@ function search () { // criação da ArrowFunction
   });
 };
 
-async function gerarHorarios() {
-  const userId = localStorage.getItem('userID');
-  const urlLobbie = `https://66416a533d66a67b3433d202.mockapi.io/lobbie/userLobbies/?userid=${userId}`;
-  const resposta = await fetch(urlLobbie);
-  const resultado = await resposta.json();
+function searchLobbie () { // criação da ArrowFunction
+  const searchBox = document.getElementById("pesquisaLobbie").value.toUpperCase(); //pega as informações que o usuário digitou e transforma em maiúsculo
+  const storeQuadras = document.getElementById("containerLobbiesId");
+  const quadras = document.querySelectorAll(".card");
 
-  const diasSemana = ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado', 'domingo'];
-  const horarios = [
-      "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00",
-      "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"
-  ]
+  quadras.forEach((quadra) => { // roda um loop para todas as quadras e pega o nome das quadras e transforma em maiúsculo
+    const nomeQuadra = quadra.querySelector("h3").textContent.toUpperCase();
 
-  const tabela = document.getElementById('tableId');
-
-  resultado.forEach(agenda => {
-      const diaSemana = agenda.diaSemana;
-      const horario = agenda.horario;
-      const nome = agenda.nome;
-
-      const indexDia = diasSemana.indexOf(diaSemana) + 1;
-      const indexHorario = horarios.indexOf(horario) + 1;
-
-      if (indexDia > 0 && indexDia < tabela.rows.length && indexHorario > 0) {
-          // Preencher a célula correspondente com o nome do lobbie
-          const horarioCell = tabela.rows[indexHorario].cells[indexDia];
-          horarioCell.textContent = nome;
-          horarioCell.style.backgroundColor = 'forestgreen';
-      }
+    if (nomeQuadra.includes(searchBox)) { // verifica se as informações fornecidas pelo usuário batem com os nomes das quadras
+      quadra.style.display = ""; //se sim, mostra as quadras correspondentes
+    } 
+    else {
+      quadra.style.display = "none"; //se não, esconde as quadras não correspondentes
+    }
   });
-}
+};
 
-gerarHorarios();
+
+
+
+     
+

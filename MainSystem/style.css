@@ -375,9 +375,7 @@ hr {
   transition: 0.3s ease-out;
 }
 
-.cardQuadras-content .text-body {
-  color: rgb(134, 134, 134);
-}
+
 
 .cardQuadras-content .text-title {
   font-size: 1.5em;

@@ -26,20 +26,11 @@
           <div class="container">
             <div class="nav-links">
               <ul>
-                <form method="get" action="">
-                  <input
-                    type="text"
-                    name="pesquisa"
-                    id="pesquisa"
-                    class="searchBar"
-                    placeholder=" Pesquisar..."
-                    required
-                  />
+                <form>
+                  <input onkeyup="searchLobbie()" type="text" name="pesquisa" id="pesquisaLobbie" class="searchBar" placeholder=" Pesquisar Lobbie"/>
                 </form>
 
-                <button class="navBtn" onclick="redirectToLand()">
-                  Filtros
-                </button>
+                
 
                 <button class="navBtn" onclick="redirectToSup()">
                   suporte
@@ -52,9 +43,7 @@
         </nav>
       </header>
       <section class="cardsSec">
-         <div class="card text">
-      <h1>Todos os lobbies:</h1>
-    </div>
+        
         <div class="containerCard" id="containerLobbiesId">
           
         </div>

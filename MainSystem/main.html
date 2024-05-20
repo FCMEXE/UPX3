@@ -36,7 +36,9 @@
         <div class="menu">
           <li class="search-box">
             <i class="bx bx-search icon"></i>
-            <input type="text" placeholder="Procure Lobbies" />
+             <form>
+                  <input onkeyup="searchLobbie()" type="text" name="pesquisa" id="pesquisaLobbie" class="searchBar" placeholder=" Pesquisar Lobbie"/>
+                </form>
           </li>
 
           <ul class="menu-links">
@@ -63,17 +65,25 @@
               </a>
             </li>
            
-            <li class="nav-link"  data-file="Agenda/agenda.html">
+            <!-- <li class="nav-link"  data-file="Agenda/agenda.html">
               <a href="#">
                 <i class="bx bx-pie-chart-alt icon"></i>
                 <span class="text nav-text"> Agenda</span>
               </a>
-            </li>
+            </li> -->
           </ul>
         </div>
 
 
          <div class="bottom-content" >
+
+          <div class="bottom-content" >
+          <li class="nav-link"  data-file="Proprietario/proprietario.html">
+            <a href="#">
+              <i class='bx bx-store-alt icon'></i>
+              <span class="text nav-text">Proprietário</span>
+            </a>
+          </li>
          
 
         <div class="bottom-content">
@@ -97,7 +107,6 @@
           <section class="cardsSec">
             <div class="containerCard" id="containerCardId"></div>
             <div class="containerCard" id="containerLobbiesId"></div>
-            <div class="tokenModal"></div>
              <div class="cardQuadras-content" id="myLobbies"></div>
             
              
@@ -125,7 +134,6 @@
                                 <h3>${quadra.nomequadra}</h3>
                                 <p>Número de Players: ${quadra.numeroplayers}</p>
                                 <p>Preço por Hora: ${quadra.precohora}</p>
-                                <p>Tipo solo: ${quadra.tipoquadra}</p>
 
                                 <button class="btnCard" onclick="CreateLobbie(${quadra.id})">Criar Lobbie</button>
                             </div>
@@ -168,7 +176,7 @@
                 <h2>${lobbies.id}</h2>
                 <h3>${lobbies.nome}</h3>
                 <p> seu lobbie foi marcado para
-                 ${lobbies.horario}, caso mais duvidas acesse a agenda!
+                 ${lobbies.horario}.
                 </p>
                 
               </div>
@@ -221,39 +229,11 @@ function getLobbiesByUserId(userId) {
 // Chama a função para obter os lobbies do usuário
 getLobbiesByUserId(userId);
 
-    function gerarHorarios() {
-        const userId = localStorage.getItem('userID');
-        const url = `https://66416a533d66a67b3433d202.mockapi.io/lobbie/userLobbies/?userid=${userId}`;
-        const resposta =  fetch(url);
-        const resultado =  resposta.json();
+    
 
-        // Preencher a tabela com os horários
-        const diasSemana = ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado', 'domingo'];
-        const horarios = [
-            "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00",
-            "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"
-        ]
-
-        const tabela = document.getElementById('tableId');
-
-        resultado.forEach(agenda => {
-            const diaSemana = agenda.diaSemana;
-            const horario = agenda.horario;
-            const nome = agenda.nome;
-
-            const indexDia = diasSemana.indexOf(diaSemana) + 1;
-            const indexHorario = horarios.indexOf(horario) + 1;
-
-            if (indexDia > 0 && indexDia < tabela.rows.length && indexHorario > 0) {
-                // Preencher a célula correspondente com 'Agendado'
-                const horarioCell = tabela.rows[indexHorario].cells[indexDia];
-                horarioCell.textContent = nome;
-                horarioCell.style.backgroundColor = 'forestgreen';
-            }
-        });
-    }
-
-    gerarHorarios();
+     function createQuadra() {
+    window.location.href = "./Quadras/QuadraCreate/quadrasCreate.html"
+  }
 
 
 
