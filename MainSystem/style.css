@@ -351,13 +351,19 @@ hr {
   overflow: visible;
 }
 
+
 .cardQuadras-content .card-details {
   color: black;
   height: 100%;
+  width: 100%;
   gap: 0.5em;
   display: grid;
   place-content: center;
+  text-align: center;
+  font-size: larger;
+  font-family: "Poppins", sans-serif;
 }
+
 
 .cardQuadras-content .card-button {
   transform: translate(-50%, 125%);
@@ -432,38 +438,8 @@ hr {
   transform: scale(1.1);
 }
 
-.agenda .container {
-  width: 80%;
-  margin: 20px auto;
-}
 
-.agenda h1 {
-  text-align: center;
-}
 
-.agenda table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.agenda th,
-td {
-  padding: 10px;
-  text-align: center;
-  border: 1px solid #ddd;
-}
-
-.agenda th {
-  background-color: #f2f2f2;
-}
-
-.agenda td {
-  background-color: #fff;
-}
-
-.agenda th:first-child {
-  width: 100px; /* Largura da coluna do horário */
-}
 
 .img {
   border-radius: 40px;
