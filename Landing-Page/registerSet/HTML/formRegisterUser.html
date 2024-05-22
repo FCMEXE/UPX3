@@ -114,7 +114,7 @@
             </div>
 
             <div class="formBTN">
-              <button id="registerButton" class="button-submit">Registrar</button>
+              <button id="registerButton" class="button-submit" onclick="redirecionaRegister()">Registrar</button>
             </div>
           </form>
         </div>
@@ -123,6 +123,12 @@
   </main>
 
   <script>
+    function redirecionaRegister(){
+  document.getElementById("registerButton").addEventListener("click", function () {
+     window.open("../../index.html");
+  });
+}
+
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.querySelector('.form');
       const registerButton = document.getElementById('registerButton');
